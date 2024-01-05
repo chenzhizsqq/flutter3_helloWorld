@@ -55,17 +55,30 @@ class DialogExample extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: const Text('AlertDialog Title'),
-          content: const Text('AlertDialog description'),
-          actions: <Widget>[
+          icon: const Icon(Icons.ac_unit_sharp), //图标
+          title: const Text('AlertDialog'),
+          titlePadding: const EdgeInsets.all(20),
+          titleTextStyle: const TextStyle(
+              color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),
+          content: const Text('我是AlertDialog对话框'),
+          contentPadding: const EdgeInsets.all(40),
+          contentTextStyle: const TextStyle(color: Colors.black, fontSize: 16),
+          backgroundColor: Color(0xffffffff),
+          elevation: 10.0,
+          actionsOverflowDirection: VerticalDirection.down,
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(20.0))),
+          actions: [
             TextButton(
-              onPressed: () => Navigator.pop(context, 'Cancel'),
-              child: const Text('Cancel'),
-            ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('确定')),
             TextButton(
-              onPressed: () => Navigator.pop(context, 'OK'),
-              child: const Text('OK'),
-            ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('取消'))
           ],
         ),
       ),

@@ -40,6 +40,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'menu.dart';
+import 'sample/GridViewSample.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
@@ -114,6 +115,7 @@ class NextScreen extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: AppMenu(),
+        //child: TabBarPageSample(),
       ),
     );
   }

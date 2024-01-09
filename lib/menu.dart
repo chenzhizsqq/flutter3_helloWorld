@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'sample/GridViewSample.dart';
 
 class AppMenu extends StatelessWidget {
   const AppMenu({super.key});
@@ -17,7 +18,7 @@ class AppMenu extends StatelessWidget {
           title: const Text(title),
         ),
         body: ListView(
-          children: const <Widget>[
+          children: <Widget>[
             ListTile(
               leading: Icon(Icons.map),
               title: Text('Map'),
@@ -31,8 +32,13 @@ class AppMenu extends StatelessWidget {
               title: Text('Phone'),
             ),
             ListTile(
-              title: Text('First Screen'),
-              trailing: Icon(Icons.keyboard_arrow_right_sharp),
+              title: Text('title'),
+              subtitle: Text('subtitle'),
+              tileColor: Colors.green,
+              leading: Icon(Icons.account_circle),
+              onTap: () {
+                print('onTap');
+              },
             ),
           ],
         ),

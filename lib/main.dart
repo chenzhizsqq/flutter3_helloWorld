@@ -39,6 +39,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'menu.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
@@ -78,7 +79,7 @@ class _FirstScreenState extends State<FirstScreen> {
     super.initState();
 
     timer = Timer(
-      const Duration(seconds: 3),
+      const Duration(seconds: 1),
       () {
         Navigator.push(
           context,
@@ -112,7 +113,7 @@ class NextScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Next Screen"),
+        child: AppMenu(),
       ),
     );
   }
@@ -184,39 +185,6 @@ class DialogExample extends StatelessWidget {
         ),
       ),
       child: const Text('Show Dialog'),
-    );
-  }
-}
-
-//GridView sample
-class GridViewSample extends StatelessWidget {
-  const GridViewSample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    const title = 'Grid List';
-
-    return MaterialApp(
-      title: title,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
-        body: GridView.count(
-          // Create a grid with 2 columns. If you change the scrollDirection to
-          // horizontal, this produces 2 rows.
-          crossAxisCount: 2,
-          // Generate 100 widgets that display their index in the List.
-          children: List.generate(100, (index) {
-            return Center(
-              child: Text(
-                'Item $index',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-            );
-          }),
-        ),
-      ),
     );
   }
 }
@@ -320,7 +288,7 @@ class TabBarPageSample extends StatelessWidget {
           ),
           body: const TabBarView(
             children: [
-              Center(child: GridViewSample()),
+              Center(child: Text("Transit")),
               Center(child: Text("Transit")),
               Center(child: Text("Bike")),
               Center(child: Text("Boat")),

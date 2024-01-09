@@ -1,4 +1,7 @@
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class AppMenu extends StatelessWidget {
   const AppMenu({super.key});
@@ -26,6 +29,10 @@ class AppMenu extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.phone),
               title: Text('Phone'),
+            ),
+            ListTile(
+              title: Text('First Screen'),
+              trailing: Icon(Icons.keyboard_arrow_right_sharp),
             ),
           ],
         ),

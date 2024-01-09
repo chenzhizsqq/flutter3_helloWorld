@@ -1,38 +1,119 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+// void main() => runApp(const MyApp());
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Flutter Hello World',
+//       theme: ThemeData(
+//         primarySwatch: Colors.blue,
+//       ),
+//       //testMyself
+//       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+//       //GridView sample
+//       //home: const GridViewSample(),
+
+//       //ListView Sample
+//       //home: const ListViewSample(),
+
+//       //TabBarPage Sample
+//       //home: const TabBarPageSample(),
+
+//       //home: const ListViewPage(),
+
+//       //导航到一个新页面和返回 ElevatedButton
+//       //https://flutter.cn/docs/cookbook/navigation/navigation-basics
+//       //home: const FirstRoute(),
+
+//       //导航到一个新页面和返回 CupertinoButton
+//       //home: const FirstRouteCupertinoButton(),
+//     );
+//   }
+// }
+
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Hello World',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
       ),
-      //testMyself
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: const Scaffold(
+        body: Center(
+          child: FirstScreen(),
+        ),
+      ),
+    );
+  }
+}
 
-      //GridView sample
-      //home: const GridViewSample(),
+/// Releaxing screen that stays visible for 3 seconds
+class FirstScreen extends StatefulWidget {
+  const FirstScreen({Key? key}) : super(key: key);
 
-      //ListView Sample
-      //home: const ListViewSample(),
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
 
-      //TabBarPage Sample
-      //home: const TabBarPageSample(),
+class _FirstScreenState extends State<FirstScreen> {
+  //Declare a timer
+  Timer? timer;
 
-      //home: const ListViewPage(),
+  @override
+  void initState() {
+    super.initState();
 
-      //导航到一个新页面和返回 ElevatedButton
-      //https://flutter.cn/docs/cookbook/navigation/navigation-basics
-      home: const FirstRoute(),
+    timer = Timer(
+      const Duration(seconds: 3),
+      () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const NextScreen(),
+          ),
+        );
+      },
+    );
+  }
 
-      //导航到一个新页面和返回 CupertinoButton
-      //home: const FirstRouteCupertinoButton(),
+  @override
+  void dispose() {
+    super.dispose();
+    timer?.cancel();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Image(
+      image: NetworkImage(
+          'https://flutter.cn/assets/images/cn/flutter-cn-logo.png'),
+    );
+  }
+}
+
+class NextScreen extends StatelessWidget {
+  const NextScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text("Next Screen"),
+      ),
     );
   }
 }

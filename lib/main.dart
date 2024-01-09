@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,7 +25,14 @@ class MyApp extends StatelessWidget {
       //TabBarPage Sample
       //home: const TabBarPageSample(),
 
-      home: const ListViewPage(),
+      //home: const ListViewPage(),
+
+      //导航到一个新页面和返回 ElevatedButton
+      //https://flutter.cn/docs/cookbook/navigation/navigation-basics
+      home: const FirstRoute(),
+
+      //导航到一个新页面和返回 CupertinoButton
+      //home: const FirstRouteCupertinoButton(),
     );
   }
 }
@@ -360,5 +368,96 @@ class _ListViewPageState extends State<ListViewPage> {
         itemCount += 50;
       });
     });
+  }
+}
+
+class FirstRoute extends StatelessWidget {
+  const FirstRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondRoute()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
+
+class FirstRouteCupertinoButton extends StatelessWidget {
+  const FirstRouteCupertinoButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('First Route'),
+      ),
+      child: Center(
+        child: CupertinoButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(
+                  builder: (context) => const SecondRouteCupertinoButton()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRouteCupertinoButton extends StatelessWidget {
+  const SecondRouteCupertinoButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Second Route'),
+      ),
+      child: Center(
+        child: CupertinoButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
   }
 }

@@ -7,6 +7,7 @@ import 'sample/ListViewListTile.dart';
 import 'sample/FirstScreenApp.dart';
 import 'sample/ListViewSample.dart';
 import 'sample/TabBarPageSample.dart';
+import 'sample/FirstRoute.dart';
 
 void main() => runApp(const MyApp());
 
@@ -33,14 +34,14 @@ class MyApp extends StatelessWidget {
       //home: const ListViewListTile(),
 
       //TabBarPage Sample
-      home: const TabBarPageSample(),
+      //home: const TabBarPageSample(),
 
       //滚动组件刷新
       //home: const ListViewPage(),
 
       //导航到一个新页面和返回 ElevatedButton
       //https://flutter.cn/docs/cookbook/navigation/navigation-basics
-      //home: const FirstRoute(),
+      home: const FirstRoute(),
 
       //导航到一个新页面和返回 CupertinoButton
       //home: const FirstRouteCupertinoButton(),
@@ -117,51 +118,6 @@ class DialogExample extends StatelessWidget {
         ),
       ),
       child: const Text('Show Dialog'),
-    );
-  }
-}
-
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
     );
   }
 }

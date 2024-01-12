@@ -8,6 +8,7 @@ import 'sample/FirstScreenApp.dart';
 import 'sample/ListViewSample.dart';
 import 'sample/TabBarPageSample.dart';
 import 'sample/FirstRoute.dart';
+import 'sample/FirstRouteCupertinoButton.dart';
 
 void main() => runApp(const MyApp());
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //testMyself
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
       //GridView sample
       //home: const GridViewSample(),
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
 
       //导航到一个新页面和返回 ElevatedButton
       //https://flutter.cn/docs/cookbook/navigation/navigation-basics
-      home: const FirstRoute(),
+      //home: const FirstRoute(),
 
       //导航到一个新页面和返回 CupertinoButton
       //home: const FirstRouteCupertinoButton(),
@@ -118,52 +119,6 @@ class DialogExample extends StatelessWidget {
         ),
       ),
       child: const Text('Show Dialog'),
-    );
-  }
-}
-
-class FirstRouteCupertinoButton extends StatelessWidget {
-  const FirstRouteCupertinoButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('First Route'),
-      ),
-      child: Center(
-        child: CupertinoButton(
-          child: const Text('Open route'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              CupertinoPageRoute(
-                  builder: (context) => const SecondRouteCupertinoButton()),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SecondRouteCupertinoButton extends StatelessWidget {
-  const SecondRouteCupertinoButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Second Route'),
-      ),
-      child: Center(
-        child: CupertinoButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
     );
   }
 }

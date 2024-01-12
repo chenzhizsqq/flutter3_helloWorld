@@ -6,6 +6,7 @@ import 'sample/ListViewPage.dart';
 import 'sample/ListViewListTile.dart';
 import 'sample/FirstScreenApp.dart';
 import 'sample/ListViewSample.dart';
+import 'sample/TabBarPageSample.dart';
 
 void main() => runApp(const MyApp());
 
@@ -26,13 +27,13 @@ class MyApp extends StatelessWidget {
       //home: const GridViewSample(),
 
       //ListView Sample
-      home: const ListViewSample(),
+      //home: const ListViewSample(),
 
       //ListView ListTile Sample
       //home: const ListViewListTile(),
 
       //TabBarPage Sample
-      //home: const TabBarPageSample(),
+      home: const TabBarPageSample(),
 
       //滚动组件刷新
       //home: const ListViewPage(),
@@ -116,68 +117,6 @@ class DialogExample extends StatelessWidget {
         ),
       ),
       child: const Text('Show Dialog'),
-    );
-  }
-}
-
-class TabBarPageSample extends StatelessWidget {
-  const TabBarPageSample({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 6,
-      child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Row(children: const [
-                  Icon(Icons.directions_car),
-                  SizedBox(width: 5),
-                  Text("Car")
-                ]),
-                Row(children: const [
-                  Icon(Icons.directions_transit),
-                  SizedBox(width: 5),
-                  Text("Transit")
-                ]),
-                Row(children: const [
-                  Icon(Icons.directions_bike),
-                  SizedBox(width: 5),
-                  Text("Bike")
-                ]),
-                Row(children: const [
-                  Icon(Icons.directions_boat),
-                  SizedBox(width: 5),
-                  Text("Boat")
-                ]),
-                Row(children: const [
-                  Icon(Icons.directions_railway),
-                  SizedBox(width: 5),
-                  Text("Railway")
-                ]),
-                Row(children: const [
-                  Icon(Icons.directions_bus),
-                  SizedBox(width: 5),
-                  Text("Bus")
-                ]),
-              ],
-              isScrollable: true,
-            ),
-            //背景色
-            title: const Text('导航栏'),
-            automaticallyImplyLeading: true,
-          ),
-          body: const TabBarView(
-            children: [
-              Center(child: Text("Transit")),
-              Center(child: Text("Transit")),
-              Center(child: Text("Bike")),
-              Center(child: Text("Boat")),
-              Center(child: Text("Railway")),
-              Center(child: Text("Bus"))
-            ],
-          )),
     );
   }
 }

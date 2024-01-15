@@ -13,7 +13,24 @@ import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
 import 'sample/FloatingActionButton2ListPageSample.dart';
 
-void main() => runApp(const MyApp());
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+//void main() => runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+        apiKey: "AIzaSyD47XXUdgweBCLi3ZOCVE-MJVY8QsQNyeQ",
+        authDomain: "fluttertest-15e1a.firebaseapp.com",
+        projectId: "fluttertest-15e1a",
+        storageBucket: "fluttertest-15e1a.appspot.com",
+        messagingSenderId: "868931261169",
+        appId: "1:868931261169:web:130ff405f609000002cf50"),
+  );
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

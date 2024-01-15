@@ -9,6 +9,7 @@ import 'sample/ListViewSample.dart';
 import 'sample/TabBarPageSample.dart';
 import 'sample/FirstRoute.dart';
 import 'sample/FirstRouteCupertinoButton.dart';
+import 'sample/StateSample.dart';
 
 void main() => runApp(const MyApp());
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //testMyself
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
       //GridView sample
       //home: const GridViewSample(),
@@ -49,6 +50,9 @@ class MyApp extends StatelessWidget {
 
       //FirstScreenApp
       //home: FirstScreenApp(),
+
+      //StateSample
+      home: StateSample(),
     );
   }
 }

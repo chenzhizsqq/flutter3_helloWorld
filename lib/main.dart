@@ -10,6 +10,7 @@ import 'sample/TabBarPageSample.dart';
 import 'sample/FirstRoute.dart';
 import 'sample/FirstRouteCupertinoButton.dart';
 import 'sample/StateSample.dart';
+import 'sample/ButtonSimple.dart';
 
 void main() => runApp(const MyApp());
 
@@ -52,7 +53,10 @@ class MyApp extends StatelessWidget {
       //home: FirstScreenApp(),
 
       //StateSample
-      home: StateSample(),
+      //home: StateSample(),
+
+      //ButtonSimple
+      home: ButtonSimple(),
     );
   }
 }

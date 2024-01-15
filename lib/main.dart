@@ -11,6 +11,7 @@ import 'sample/FirstRoute.dart';
 import 'sample/FirstRouteCupertinoButton.dart';
 import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
+import 'sample/FloatingActionButton2ListPageSample.dart';
 
 void main() => runApp(const MyApp());
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       //home: const ListViewListTile(),
 
       //导航栏 TabBarPage Sample
-      home: const TabBarPageSample(),
+      //home: const TabBarPageSample(),
 
       //滚动组件刷新
       //home: const ListViewPage(),
@@ -57,6 +58,9 @@ class MyApp extends StatelessWidget {
 
       //ButtonSimple
       //home: ButtonSimple(),
+
+      //按钮Button点击后，并通过text的输入。再ListPage追加数据  - FloatingActionButton2ListPageSample
+      home: FloatingActionButton2ListPageSample(),
     );
   }
 }

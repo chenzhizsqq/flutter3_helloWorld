@@ -12,6 +12,7 @@ import 'sample/FirstRouteCupertinoButton.dart';
 import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
 import 'sample/FloatingActionButton2ListPageSample.dart';
+import 'sample/FirebaseSample.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -77,7 +78,10 @@ class MyApp extends StatelessWidget {
       //home: ButtonSimple(),
 
       //按钮Button点击后，并通过text的输入。再ListPage追加数据  - FloatingActionButton2ListPageSample
-      home: FloatingActionButton2ListPageSample(),
+      //home: FloatingActionButton2ListPageSample(),
+
+      //Firebase Sample
+      home: FirebaseSample(),
     );
   }
 }

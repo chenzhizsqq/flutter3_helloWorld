@@ -13,9 +13,11 @@ import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
 import 'sample/FloatingActionButton2ListPageSample.dart';
 import 'sample/FirebaseSample.dart';
+import 'sample/FirebaseCloudFirestoreSample.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 //void main() => runApp(const MyApp());
 
@@ -81,7 +83,10 @@ class MyApp extends StatelessWidget {
       //home: FloatingActionButton2ListPageSample(),
 
       //Firebase Sample
-      home: FirebaseSample(),
+      //home: FirebaseSample(),
+
+      //FirebaseCloudFirestore Sample
+      home: FirebaseCloudFirestoreSample(),
     );
   }
 }

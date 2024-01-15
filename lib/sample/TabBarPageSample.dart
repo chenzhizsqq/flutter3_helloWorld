@@ -45,7 +45,7 @@ class TabBarPageSample extends StatelessWidget {
               isScrollable: true,
             ),
             //背景色
-            title: const Text('导航栏'),
+            title: const Text('导航栏 TabBarView'),
             automaticallyImplyLeading: true,
           ),
           body: const TabBarView(

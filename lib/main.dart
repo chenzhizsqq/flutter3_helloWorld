@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
       //ListView ListTile Sample
       //home: const ListViewListTile(),
 
-      //TabBarPage Sample
-      //home: const TabBarPageSample(),
+      //导航栏 TabBarPage Sample
+      home: const TabBarPageSample(),
 
       //滚动组件刷新
       //home: const ListViewPage(),
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
       //home: StateSample(),
 
       //ButtonSimple
-      home: ButtonSimple(),
+      //home: ButtonSimple(),
     );
   }
 }

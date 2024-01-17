@@ -15,9 +15,6 @@ class _FirebaseCloudFirestoreSampleState
   // 指定したドキュメントの情報
   String orderDocumentInfo = '';
 
-  final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('users').snapshots();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,28 +102,6 @@ class _FirebaseCloudFirestoreSampleState
                     .set({'price': 333, 'date': '9/13'}); // データ
               },
             ),
-            ElevatedButton(
-              child: Text('get id_abc orders'),
-              onPressed: () async {
-                // コレクション内のドキュメント一覧を取得
-                var db = FirebaseFirestore.instance;
-
-                await db
-                    .collection("users")
-                    .doc('id_abc')
-                    .collection('orders')
-                    .get()
-                    .then((event) {
-                  for (var doc in event.docs) {
-                    print("${doc.id} => ${doc.data()}");
-                  }
-                });
-                // 取得したドキュメント一覧をUIに反映
-                // setState(() {
-                //   documentList = snapshot.documents;
-                // });
-              },
-            ),
 
             //3333
             /*
@@ -153,50 +128,45 @@ class _FirebaseCloudFirestoreSampleState
             ),
             */
 
-            //3333 read data users
             ElevatedButton(
-              child: Text('ドキュメント一覧取得 read data users'),
+              child: Text('get id_abc all orders '),
               onPressed: () async {
                 // コレクション内のドキュメント一覧を取得
                 var db = FirebaseFirestore.instance;
 
-                await db.collection("users").get().then((event) {
-                  for (var doc in event.docs) {
-                    print("${doc.id} => ${doc.data()}");
-                  }
-                });
-                // 取得したドキュメント一覧をUIに反映
-                // setState(() {
-                //   documentList = snapshot.documents;
+                // await db
+                //     .collection("users")
+                //     .doc('id_abc')
+                //     .collection('orders')
+                //     .get()
+                //     .then((event) {
+                //   for (var doc in event.docs) {
+                //     print("${doc.id} => ${doc.data()}");
+                //   }
                 // });
-              },
-            ),
 
-            ElevatedButton(
-              child: Text('ドキュメント一覧取得 read data'),
-              onPressed: () async {
-                // コレクション内のドキュメント一覧を取得
-                var db = FirebaseFirestore.instance;
-
-                print("$db");
-                // 取得したドキュメント一覧をUIに反映
-                // setState(() {
-                //   documentList = snapshot.documents;
-                // });
-              },
-            ),
-
-            /*
-            // コレクション内のドキュメント一覧を表示
-            Column(
-              children: documentList.map((document) {
-                return ListTile(
-                  title: Text('${document['name']}さん'),
-                  subtitle: Text('${document['age']}歳'),
+                await db
+                    .collection("users")
+                    .doc('id_abc')
+                    .collection('orders')
+                    .get()
+                    .then(
+                  (querySnapshot) {
+                    print("Successfully completed");
+                    var temp = "";
+                    for (var docSnapshot in querySnapshot.docs) {
+                      print('${docSnapshot.id} => ${docSnapshot.data()}');
+                      temp = temp + '${docSnapshot.data()}';
+                    }
+                    setState(() {
+                      orderDocumentInfo = temp;
+                    });
+                    print('orderDocumentInfo:$orderDocumentInfo');
+                  },
+                  onError: (e) => print("Error completing: $e"),
                 );
-              }).toList(),
+              },
             ),
-            */
 
             //4444
             ElevatedButton(
@@ -216,8 +186,6 @@ class _FirebaseCloudFirestoreSampleState
                 });
               },
             ),
-            // ドキュメントの情報を表示
-            ListTile(title: Text(orderDocumentInfo)),
 
             //5555
             ElevatedButton(
@@ -244,6 +212,9 @@ class _FirebaseCloudFirestoreSampleState
                     .delete();
               },
             ),
+
+            // ドキュメントの情報を表示
+            ListTile(title: Text(orderDocumentInfo)),
           ],
         ),
       ),

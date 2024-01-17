@@ -87,13 +87,13 @@ class MyApp extends StatelessWidget {
       //home: FirebaseSample(),
 
       //FirebaseCloudFirestore Sample
-      //home: FirebaseCloudFirestoreSample(),
+      home: FirebaseCloudFirestoreSample(),
 
       //FirebaseFirestore use Stream Sample - 能够实时更新数据
-      home: Scaffold(
+      /*home: Scaffold(
         appBar: AppBar(),
         body: FirebaseFirestoreStream(),
-      ),
+      ),*/
     );
   }
 }

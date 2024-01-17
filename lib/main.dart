@@ -14,6 +14,7 @@ import 'sample/ButtonSimple.dart';
 import 'sample/FloatingActionButton2ListPageSample.dart';
 import 'sample/FirebaseSample.dart';
 import 'sample/FirebaseCloudFirestoreSample.dart';
+import 'sample/FirebaseFirestoreStream.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -86,7 +87,13 @@ class MyApp extends StatelessWidget {
       //home: FirebaseSample(),
 
       //FirebaseCloudFirestore Sample
-      home: FirebaseCloudFirestoreSample(),
+      //home: FirebaseCloudFirestoreSample(),
+
+      //FirebaseFirestore use Stream Sample - 能够实时更新数据
+      home: Scaffold(
+        appBar: AppBar(),
+        body: FirebaseFirestoreStream(),
+      ),
     );
   }
 }

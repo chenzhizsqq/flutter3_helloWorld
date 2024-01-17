@@ -15,6 +15,9 @@ class _FirebaseCloudFirestoreSampleState
   // 指定したドキュメントの情報
   String orderDocumentInfo = '';
 
+  final Stream<QuerySnapshot> _usersStream =
+      FirebaseFirestore.instance.collection('users').snapshots();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +49,62 @@ class _FirebaseCloudFirestoreSampleState
                     .set({'price': 600, 'date': '9/13'}); // データ
               },
             ),
+
+            //3333
+            /*
+            ElevatedButton(
+              child: Text('ドキュメント一覧取得'),
+              onPressed: () async {
+                // コレクション内のドキュメント一覧を取得
+                final snapshot =
+                    await FirebaseFirestore.instance.collection('users').get();
+                // 取得したドキュメント一覧をUIに反映
+                setState(() {
+                  documentList = snapshot.documents;
+                });
+              },
+            ),
+            // コレクション内のドキュメント一覧を表示
+            Column(
+              children: documentList.map((document) {
+                return ListTile(
+                  title: Text('${document['name']}さん'),
+                  subtitle: Text('${document['age']}歳'),
+                );
+              }).toList(),
+            ),
+            */
+
+            //3333 read data simple
+            ElevatedButton(
+              child: Text('ドキュメント一覧取得 read data simple'),
+              onPressed: () async {
+                // コレクション内のドキュメント一覧を取得
+                var db = FirebaseFirestore.instance;
+
+                await db.collection("users").get().then((event) {
+                  for (var doc in event.docs) {
+                    print("${doc.id} => ${doc.data()}");
+                  }
+                });
+                // 取得したドキュメント一覧をUIに反映
+                // setState(() {
+                //   documentList = snapshot.documents;
+                // });
+              },
+            ),
+
+            /*
+            // コレクション内のドキュメント一覧を表示
+            Column(
+              children: documentList.map((document) {
+                return ListTile(
+                  title: Text('${document['name']}さん'),
+                  subtitle: Text('${document['age']}歳'),
+                );
+              }).toList(),
+            ),
+            */
 
             //4444
             ElevatedButton(

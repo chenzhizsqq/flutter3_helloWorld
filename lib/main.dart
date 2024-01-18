@@ -28,12 +28,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-        apiKey: "AIzaSyD47XXUdgweBCLi3ZOCVE-MJVY8QsQNyeQ",
-        authDomain: "fluttertest-15e1a.firebaseapp.com",
-        projectId: "fluttertest-15e1a",
-        storageBucket: "fluttertest-15e1a.appspot.com",
-        messagingSenderId: "868931261169",
-        appId: "1:868931261169:web:130ff405f609000002cf50"),
+      apiKey: "AIzaSyD47XXUdgweBCLi3ZOCVE-MJVY8QsQNyeQ",
+      authDomain: "fluttertest-15e1a.firebaseapp.com",
+      projectId: "fluttertest-15e1a",
+      storageBucket: "fluttertest-15e1a.appspot.com",
+      messagingSenderId: "868931261169",
+      appId: "1:868931261169:web:130ff405f609000002cf50",
+      databaseURL:
+          "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    ),
   );
   runApp(const MyApp());
 }

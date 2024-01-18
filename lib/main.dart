@@ -38,6 +38,12 @@ void main() async {
           "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app/",
     ),
   );
+
+  //判断是否android虚拟机
+  if (USE_DATABASE_EMULATOR) {
+    FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
+  }
+
   runApp(const MyApp());
 }
 

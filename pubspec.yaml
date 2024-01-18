@@ -14,11 +14,13 @@ dependencies:
   firebase_auth: ^4.7.3
   cloud_firestore: ^4.4.5
   firebase_database: ^10.0.16
+  dio: ^5.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.2
+  build_runner: ^2.3.3
 
 flutter:
   uses-material-design: true

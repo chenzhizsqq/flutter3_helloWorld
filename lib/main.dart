@@ -16,6 +16,7 @@ import 'sample/FirebaseSample.dart';
 import 'sample/FirebaseCloudFirestoreSample.dart';
 import 'sample/FirebaseFirestoreStream.dart';
 import 'sample/FirebaseRealtimeDatabaseSample.dart';
+import 'sample/DioSample.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -107,7 +108,10 @@ class MyApp extends StatelessWidget {
       ),*/
 
       //FirebaseRealtimeDatabaseSample       - Firebase Realtime json
-      home: FirebaseRealtimeDatabaseSample(),
+      //home: FirebaseRealtimeDatabaseSample(),
+
+      //DioSample
+      home: DioSample(),
     );
   }
 }

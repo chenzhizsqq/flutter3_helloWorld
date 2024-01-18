@@ -36,6 +36,11 @@ class _FirebaseRealtimeDatabaseSampleState
   late StreamSubscription<DatabaseEvent> _counterSubscription;
   late StreamSubscription<DatabaseEvent> _messagesSubscription;
 
+  int _counter = 0;
+  String _kTestKey = 'Hello';
+  String _kTestValue = 'world!';
+  FirebaseException? _error;
+
   @override
   void initState() {
     init();
@@ -66,6 +71,14 @@ class _FirebaseRealtimeDatabaseSampleState
     print("init() end");
   }
 
+  Future<void> _increment() async {
+    await _counterRef.set(ServerValue.increment(1));
+
+    await _messagesRef
+        .push()
+        .set(<String, String>{_kTestKey: '$_kTestValue $_counter'});
+  }
+
   @override
   Widget build(BuildContext context) {
     if (!initialized) return Container();
@@ -78,9 +91,14 @@ class _FirebaseRealtimeDatabaseSampleState
       body: Center(
         child: Column(
           children: <Widget>[
-            Text('Firebase Realtime Database Sample'),
+            Text(' Realtime Database - 实时数据库 - 规则 一定要把rule设定好'),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _increment,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
     );
   }

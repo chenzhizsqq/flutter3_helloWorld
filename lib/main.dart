@@ -18,6 +18,7 @@ import 'sample/FirebaseFirestoreStream.dart';
 import 'sample/FirebaseRealtimeDatabaseSample.dart';
 import 'sample/DioSample.dart';
 import 'sample/SharedPreferencesSample.dart';
+import 'sample/NavigatorSample.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -117,10 +118,11 @@ class MyApp extends StatelessWidget {
 
       //shared_preferences
       //https://zenn.dev/joo_hashi/articles/22e7f7d0897645
-      home: SharedPreferencesSample(),
+      //home: SharedPreferencesSample(),
 
       //Navigator sample
       //https://codezine.jp/article/detail/14271
+      home: NavigatorSample(),
     );
   }
 }

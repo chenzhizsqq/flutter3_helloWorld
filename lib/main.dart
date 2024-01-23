@@ -17,6 +17,7 @@ import 'sample/FirebaseCloudFirestoreSample.dart';
 import 'sample/FirebaseFirestoreStream.dart';
 import 'sample/FirebaseRealtimeDatabaseSample.dart';
 import 'sample/DioSample.dart';
+import 'sample/SharedPreferencesSample.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -112,7 +113,14 @@ class MyApp extends StatelessWidget {
 
       //DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定
       //dio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。
-      home: DioSample(),
+      //home: DioSample(),
+
+      //shared_preferences
+      //https://zenn.dev/joo_hashi/articles/22e7f7d0897645
+      home: SharedPreferencesSample(),
+
+      //Navigator sample
+      //https://codezine.jp/article/detail/14271
     );
   }
 }

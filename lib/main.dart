@@ -110,7 +110,8 @@ class MyApp extends StatelessWidget {
       //FirebaseRealtimeDatabaseSample       - Firebase Realtime json
       //home: FirebaseRealtimeDatabaseSample(),
 
-      //DioSample Http请求库-dio  人气较高的dio库  60%:
+      //DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定
+      //dio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。
       home: DioSample(),
     );
   }

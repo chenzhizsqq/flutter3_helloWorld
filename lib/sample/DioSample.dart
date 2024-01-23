@@ -18,17 +18,21 @@ class _DioSampleState extends State<DioSample> {
 
   void getData() async {
     try {
-      var response = await Dio()
+      // APIからの応答を保持する変数
+      final response = await Dio()
           .get('https://protocoderspoint.com/jsondata/superheros.json');
       if (response.statusCode == 200) {
         setState(() {
           jsonList = response.data['superheros'] as List;
+          print(jsonList);
         });
       } else {
         print(response.statusCode);
       }
     } catch (e) {
+      print("getData catch:");
       print(e);
+      //DioException [connection error]
     }
   }
 

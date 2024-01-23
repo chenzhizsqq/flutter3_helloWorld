@@ -110,7 +110,7 @@ class MyApp extends StatelessWidget {
       //FirebaseRealtimeDatabaseSample       - Firebase Realtime json
       //home: FirebaseRealtimeDatabaseSample(),
 
-      //DioSample
+      //DioSample Http请求库-dio  人气较高的dio库  60%:
       home: DioSample(),
     );
   }

@@ -61,7 +61,7 @@ class FirstPage extends StatelessWidget {
                       ));
                 },
               ),
-              TextButton(
+              ElevatedButton(
                 child: Text("NavigationButtonScreenに遷移する"),
                 onPressed: () {
                   // （1） 指定した画面に遷移する

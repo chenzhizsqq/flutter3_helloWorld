@@ -123,14 +123,42 @@ class MyApp extends StatelessWidget {
       //Navigator sample
       //https://codezine.jp/article/detail/14271
       //https://qiita.com/deodeo_mg/items/b2869710ffadaf42f816
-      home: NavigatorSample(),
+      //home: NavigatorSample(),
+
+      home: SampleMenu(),
+    );
+  }
+}
+
+class SampleMenu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ホーム"),
+      ),
+      body: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+            ElevatedButton(
+              child: Text("MyHomePage"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            MyHomePage(title: 'Flutter Demo Home Page')));
+              },
+            ),
+          ])),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   final String title;
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

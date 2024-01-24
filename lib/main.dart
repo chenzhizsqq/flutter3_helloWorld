@@ -122,6 +122,7 @@ class MyApp extends StatelessWidget {
 
       //Navigator sample
       //https://codezine.jp/article/detail/14271
+      //https://qiita.com/deodeo_mg/items/b2869710ffadaf42f816
       home: NavigatorSample(),
     );
   }

@@ -60,71 +60,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      //testMyself
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
-      //GridView sample
-      //home: const GridViewSample(),
-
-      //ListView Sample
-      //home: const ListViewSample(),
-
-      //ListView ListTile Sample
-      //home: const ListViewListTile(),
-
-      //导航栏 TabBarPage Sample
-      //home: const TabBarPageSample(),
-
-      //滚动组件刷新
-      //home: const ListViewPage(),
-
-      //导航到一个新页面和返回 ElevatedButton
-      //https://flutter.cn/docs/cookbook/navigation/navigation-basics
-      //home: const FirstRoute(),
-
-      //导航到一个新页面和返回 CupertinoButton
-      //home: const FirstRouteCupertinoButton(),
-
-      //FirstScreenApp
-      //home: FirstScreenApp(),
-
-      //StateSample
-      //home: StateSample(),
-
-      //ButtonSimple
-      //home: ButtonSimple(),
-
-      //按钮Button点击后，并通过text的输入。再ListPage追加数据  - FloatingActionButton2ListPageSample
-      //home: FloatingActionButton2ListPageSample(),
-
-      //Firebase Sample
-      //home: FirebaseSample(),
-
-      //FirebaseCloudFirestore Sample       - Firebase Firestore data
-      //home: FirebaseCloudFirestoreSample(),
-
-      //FirebaseFirestore use Stream Sample - 能够实时更新数据
-      /*home: Scaffold(
-        appBar: AppBar(),
-        body: FirebaseFirestoreStream(),
-      ),*/
-
-      //FirebaseRealtimeDatabaseSample       - Firebase Realtime json
-      //home: FirebaseRealtimeDatabaseSample(),
-
-      //DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定
-      //dio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。
-      //home: DioSample(),
-
-      //shared_preferences
-      //https://zenn.dev/joo_hashi/articles/22e7f7d0897645
-      //home: SharedPreferencesSample(),
-
-      //Navigator sample
-      //https://codezine.jp/article/detail/14271
-      //https://qiita.com/deodeo_mg/items/b2869710ffadaf42f816
-      //home: NavigatorSample(),
-
+      //打开menu
       home: SampleMenu(),
     );
   }
@@ -137,21 +74,211 @@ class SampleMenu extends StatelessWidget {
       appBar: AppBar(
         title: Text("ホーム"),
       ),
-      body: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-            ElevatedButton(
-              child: Text("MyHomePage"),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            MyHomePage(title: 'Flutter Demo Home Page')));
-              },
-            ),
-          ])),
+      body: ListView(children: <Widget>[
+        ElevatedButton(
+          child: Text("MyHomePage"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        MyHomePage(title: 'Flutter Demo Home Page')));
+          },
+        ),
+        ElevatedButton(
+          child: Text("GridView sample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: const GridViewSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("ListViewSample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: ListViewSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("ListView ListTile Sample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: const ListViewListTile(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("导航栏 TabBarPage Sample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const TabBarPageSample()));
+          },
+        ),
+        ElevatedButton(
+          child: Text("滚动组件刷新"),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const ListViewPage()));
+          },
+        ),
+
+        //https://flutter.cn/docs/cookbook/navigation/navigation-basics
+        ElevatedButton(
+          child: Text("导航到一个新页面和返回 ElevatedButton"),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const FirstRoute()));
+          },
+        ),
+        ElevatedButton(
+          child: Text("导航到一个新页面和返回 CupertinoButton"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: const FirstRouteCupertinoButton(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("FirstScreenApp"),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => FirstScreenApp()));
+          },
+        ),
+        ElevatedButton(
+          child: Text("StateSample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: StateSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("ButtonSimple"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: ButtonSimple(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "按钮Button点击后，并通过text的输入。再ListPage追加数据  - FloatingActionButton2ListPageSample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FloatingActionButton2ListPageSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("Firebase Sample Login"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseCloudFirestoreSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseFirestoreStream(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FirebaseRealtimeDatabaseSample()));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定 \ndio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DioSample()));
+          },
+        ),
+
+        //https://zenn.dev/joo_hashi/articles/22e7f7d0897645
+        ElevatedButton(
+          child: Text("shared_preferences"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SharedPreferencesSample()));
+          },
+        ),
+
+        //https://codezine.jp/article/detail/14271
+        //https://qiita.com/deodeo_mg/items/b2869710ffadaf42f816
+        ElevatedButton(
+          child: Text("Navigator sample"),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NavigatorSample()));
+          },
+        ),
+      ]),
     );
   }
 }

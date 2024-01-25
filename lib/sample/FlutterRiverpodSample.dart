@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'FlutterRiverpodDir/FlutterRiverpodHelloworld.dart';
 import 'FlutterRiverpodDir/NoConsumerWidget.dart';
+import 'FlutterRiverpodDir/ConsumerStatefulWidgetSample.dart';
 
 class FlutterRiverpodSample extends StatelessWidget {
   @override
@@ -28,6 +29,18 @@ class FlutterRiverpodSample extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => NoConsumerWidget()));
+              },
+            ),
+
+            //ConsumerStatefulWidget Sample
+            ElevatedButton(
+              child: Text(
+                  "ConsumerStatefulWidget Sample \n StatefulWidget + State = ConsumerStatefulWidget + ConsumerState"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ConsumerStatefulWidgetSample()));
               },
             ),
           ],

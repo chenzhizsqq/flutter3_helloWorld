@@ -103,7 +103,12 @@ class SampleMenu extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => Scaffold(
-                          appBar: AppBar(),
+                          appBar: AppBar(
+                            title: Text(
+                              'FlutterRiverpod Sample',
+                            ),
+                            centerTitle: true,
+                          ),
                           body: FlutterRiverpodSample(),
                         )));
           },

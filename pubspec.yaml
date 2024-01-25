@@ -5,23 +5,34 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.19.0 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^5.4.0
+  shared_preferences: ^2.0.18
+
   #firebase
   firebase_core: ^2.15.1
   firebase_auth: ^4.7.3
   cloud_firestore: ^4.4.5
   firebase_database: ^10.0.16
-  dio: ^5.4.0
-  shared_preferences: ^2.0.18
+
+  #flutter_riverpod
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.2
   build_runner: ^2.3.3
+
+  #flutter_riverpod
+  custom_lint:
+  riverpod_generator: ^2.3.9
+  riverpod_lint: ^2.3.7
 
 flutter:
   uses-material-design: true

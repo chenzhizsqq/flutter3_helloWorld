@@ -19,6 +19,7 @@ import 'sample/FirebaseRealtimeDatabaseSample.dart';
 import 'sample/DioSample.dart';
 import 'sample/SharedPreferencesSample.dart';
 import 'sample/NavigatorSample.dart';
+import 'sample/FlutterRiverpodSample.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -83,6 +84,20 @@ class SampleMenu extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) =>
                         MyHomePage(title: 'Flutter Demo Home Page')));
+          },
+        ),
+
+        //FlutterRiverpodSample.dart
+        ElevatedButton(
+          child: Text("FlutterRiverpodSample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FlutterRiverpodSample(),
+                        )));
           },
         ),
 

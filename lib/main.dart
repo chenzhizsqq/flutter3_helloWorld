@@ -85,6 +85,84 @@ class SampleMenu extends StatelessWidget {
                         MyHomePage(title: 'Flutter Demo Home Page')));
           },
         ),
+
+        ElevatedButton(
+          child: Text("Firebase Sample Login"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseCloudFirestoreSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseFirestoreStream(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FirebaseRealtimeDatabaseSample()));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定 \ndio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。"),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DioSample()));
+          },
+        ),
+
+        //https://zenn.dev/joo_hashi/articles/22e7f7d0897645
+        ElevatedButton(
+          child: Text("shared_preferences"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SharedPreferencesSample()));
+          },
+        ),
+
+        //https://codezine.jp/article/detail/14271
+        //https://qiita.com/deodeo_mg/items/b2869710ffadaf42f816
+        ElevatedButton(
+          child: Text("Navigator sample"),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NavigatorSample()));
+          },
+        ),
+
         ElevatedButton(
           child: Text("GridView sample"),
           onPressed: () {
@@ -200,82 +278,6 @@ class SampleMenu extends StatelessWidget {
                           appBar: AppBar(),
                           body: FloatingActionButton2ListPageSample(),
                         )));
-          },
-        ),
-        ElevatedButton(
-          child: Text("Firebase Sample Login"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: FirebaseSample(),
-                        )));
-          },
-        ),
-        ElevatedButton(
-          child: Text(
-              "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: FirebaseCloudFirestoreSample(),
-                        )));
-          },
-        ),
-        ElevatedButton(
-          child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: FirebaseFirestoreStream(),
-                        )));
-          },
-        ),
-        ElevatedButton(
-          child: Text(
-              "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => FirebaseRealtimeDatabaseSample()));
-          },
-        ),
-        ElevatedButton(
-          child: Text(
-              "DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定 \ndio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。"),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DioSample()));
-          },
-        ),
-
-        //https://zenn.dev/joo_hashi/articles/22e7f7d0897645
-        ElevatedButton(
-          child: Text("shared_preferences"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => SharedPreferencesSample()));
-          },
-        ),
-
-        //https://codezine.jp/article/detail/14271
-        //https://qiita.com/deodeo_mg/items/b2869710ffadaf42f816
-        ElevatedButton(
-          child: Text("Navigator sample"),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => NavigatorSample()));
           },
         ),
       ]),

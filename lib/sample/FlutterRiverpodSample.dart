@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'FlutterRiverpodDir/FlutterRiverpodHelloworld.dart';
+import 'FlutterRiverpodDir/NoConsumerWidget.dart';
 
 class FlutterRiverpodSample extends StatelessWidget {
   @override
@@ -17,6 +18,16 @@ class FlutterRiverpodSample extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => FlutterRiverpodHelloworld()));
+              },
+            ),
+
+            ElevatedButton(
+              child: Text("NoConsumerWidget"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NoConsumerWidget()));
               },
             ),
           ],

@@ -13,12 +13,27 @@ class Counter extends StateNotifier<int> {
   void increment() => state++;
 }
 
+//给按钮CounterTwo追踪的接口counterProviderTwo
+final counterProviderTwo = StateNotifierProvider<CounterTwo, int>((ref) {
+  return CounterTwo();
+});
+
+//添加一个按钮CounterTwo
+class CounterTwo extends StateNotifier<int> {
+  CounterTwo() : super(0);
+  void increment() => state++;
+}
+
 //StatelessWidget = ConsumerWidget
 //StatefulWidget + State = ConsumerStatefulWidget + ConsumerState
 class FlutterRiverpodHelloworld extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    //追踪Counter
     final count = ref.watch(counterProvider);
+
+    //追踪CounterTwo
+    final countTwo = ref.watch(counterProviderTwo);
 
     return Scaffold(
       appBar: AppBar(
@@ -28,12 +43,28 @@ class FlutterRiverpodHelloworld extends ConsumerWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //Counter
             Text(
               'Count:',
             ),
             Text(
               '$count',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+
+            //CounterTwo
+            Text(
+              'CountTwo:',
+            ),
+            Text(
+              '$countTwo',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(
+              child: Text("CounterTwo Increment"),
+              onPressed: () {
+                ref.read(counterProviderTwo.notifier).increment();
+              },
             ),
           ],
         ),
@@ -42,7 +73,7 @@ class FlutterRiverpodHelloworld extends ConsumerWidget {
         onPressed: () {
           ref.read(counterProvider.notifier).increment();
         },
-        tooltip: 'Increment',
+        tooltip: 'Counter Increment',
         child: Icon(Icons.add),
       ),
     );

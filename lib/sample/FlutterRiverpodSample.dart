@@ -45,9 +45,11 @@ class FlutterRiverpodSample extends StatelessWidget {
               },
             ),
 
+            //https://riverpod.dev/zh-hans/docs/case_studies/pull_to_refresh
             //RiverpodRefresh Sample
             ElevatedButton(
-              child: Text("RiverpodRefresh Sample"),
+              child: Text(
+                  "RiverpodRefresh Sample \n 一定要运行一下的命令行，不然Freezed不能够使用!!!! \n flutter pub run build_runner build "),
               onPressed: () {
                 Navigator.push(
                     context,

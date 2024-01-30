@@ -15,10 +15,10 @@ dependencies:
   http: ^0.13.0
 
   #firebase
-  firebase_core: ^2.15.1
-  firebase_auth: ^4.7.3
-  cloud_firestore: ^4.4.5
-  firebase_database: ^10.0.16
+  #firebase_core: ^2.15.1
+  #firebase_auth: ^4.7.3
+  #cloud_firestore: ^4.4.5
+  #firebase_database: ^10.0.16
 
   #flutter_riverpod
   flutter_riverpod: ^2.4.9

@@ -66,7 +66,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
               decoration: InputDecoration(labelText: "お名前を入力してください"),
               controller: _nameController,
             ),
-            Row(
+            /*Row(
               children: [
                 const SizedBox(width: 30),
                 ElevatedButton(
@@ -96,7 +96,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                   child: Text('削除'),
                 ),
               ],
-            ),
+            ),*/
           ],
         ),
       ),

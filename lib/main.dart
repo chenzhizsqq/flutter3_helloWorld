@@ -12,52 +12,52 @@ import 'sample/FirstRouteCupertinoButton.dart';
 import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
 import 'sample/FloatingActionButton2ListPageSample.dart';
-import 'sample/FirebaseSample.dart';
-import 'sample/FirebaseCloudFirestoreSample.dart';
-import 'sample/FirebaseFirestoreStream.dart';
-import 'sample/FirebaseRealtimeDatabaseSample.dart';
+// import 'sample/FirebaseSample.dart';
+// import 'sample/FirebaseCloudFirestoreSample.dart';
+// import 'sample/FirebaseFirestoreStream.dart';
+// import 'sample/FirebaseRealtimeDatabaseSample.dart';
 import 'sample/DioSample.dart';
 import 'sample/SharedPreferencesSample.dart';
 import 'sample/NavigatorSample.dart';
 import 'sample/FlutterRiverpodSample.dart';
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_database/firebase_database.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:firebase_database/firebase_database.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-//void main() => runApp(const MyApp());
+void main() => runApp(const MyApp());
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyD47XXUdgweBCLi3ZOCVE-MJVY8QsQNyeQ",
-      authDomain: "fluttertest-15e1a.firebaseapp.com",
-      projectId: "fluttertest-15e1a",
-      storageBucket: "fluttertest-15e1a.appspot.com",
-      messagingSenderId: "868931261169",
-      appId: "1:868931261169:web:130ff405f609000002cf50",
-      databaseURL:
-          "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    ),
-  );
-
-  //判断是否android虚拟机
-  if (USE_DATABASE_EMULATOR) {
-    FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
-  }
-
-  runApp(
-    // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
-    // 它不应该在 “MyApp” 内部，而是作为 “runApp” 的直接参数。
-    ProviderScope(
-      child: MyApp(),
-    ),
-  );
-}
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(
+//     options: const FirebaseOptions(
+//       apiKey: "AIzaSyD47XXUdgweBCLi3ZOCVE-MJVY8QsQNyeQ",
+//       authDomain: "fluttertest-15e1a.firebaseapp.com",
+//       projectId: "fluttertest-15e1a",
+//       storageBucket: "fluttertest-15e1a.appspot.com",
+//       messagingSenderId: "868931261169",
+//       appId: "1:868931261169:web:130ff405f609000002cf50",
+//       databaseURL:
+//           "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app/",
+//     ),
+//   );
+//
+//   //判断是否android虚拟机
+//   if (USE_DATABASE_EMULATOR) {
+//     FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
+//   }
+//
+//   runApp(
+//     // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
+//     // 它不应该在 “MyApp” 内部，而是作为 “runApp” 的直接参数。
+//     ProviderScope(
+//       child: MyApp(),
+//     ),
+//   );
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -96,71 +96,71 @@ class SampleMenu extends StatelessWidget {
         ),
 
         //FlutterRiverpodSample.dart
-        ElevatedButton(
-          child: Text("FlutterRiverpodSample"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(
-                            title: Text(
-                              'FlutterRiverpod Sample',
-                            ),
-                            centerTitle: true,
-                          ),
-                          body: FlutterRiverpodSample(),
-                        )));
-          },
-        ),
+        // ElevatedButton(
+        //   child: Text("FlutterRiverpodSample"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (context) => Scaffold(
+        //                   appBar: AppBar(
+        //                     title: Text(
+        //                       'FlutterRiverpod Sample',
+        //                     ),
+        //                     centerTitle: true,
+        //                   ),
+        //                   body: FlutterRiverpodSample(),
+        //                 )));
+        //   },
+        // ),
 
-        ElevatedButton(
-          child: Text("Firebase Sample Login"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: FirebaseSample(),
-                        )));
-          },
-        ),
-        ElevatedButton(
-          child: Text(
-              "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: FirebaseCloudFirestoreSample(),
-                        )));
-          },
-        ),
-        ElevatedButton(
-          child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: FirebaseFirestoreStream(),
-                        )));
-          },
-        ),
-        ElevatedButton(
-          child: Text(
-              "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => FirebaseRealtimeDatabaseSample()));
-          },
-        ),
+        // ElevatedButton(
+        //   child: Text("Firebase Sample Login"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (context) => Scaffold(
+        //                   appBar: AppBar(),
+        //                   body: FirebaseSample(),
+        //                 )));
+        //   },
+        // ),
+        // ElevatedButton(
+        //   child: Text(
+        //       "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (context) => Scaffold(
+        //                   appBar: AppBar(),
+        //                   body: FirebaseCloudFirestoreSample(),
+        //                 )));
+        //   },
+        // ),
+        // ElevatedButton(
+        //   child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (context) => Scaffold(
+        //                   appBar: AppBar(),
+        //                   body: FirebaseFirestoreStream(),
+        //                 )));
+        //   },
+        // ),
+        // ElevatedButton(
+        //   child: Text(
+        //       "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (context) => FirebaseRealtimeDatabaseSample()));
+        //   },
+        // ),
         ElevatedButton(
           child: Text(
               "DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定 \ndio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。"),

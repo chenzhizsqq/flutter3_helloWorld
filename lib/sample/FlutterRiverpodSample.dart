@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'FlutterRiverpodDir/FlutterRiverpodHelloworld.dart';
 import 'FlutterRiverpodDir/NoConsumerWidget.dart';
 import 'FlutterRiverpodDir/ConsumerStatefulWidgetSample.dart';
+import 'FlutterRiverpodDir/RiverpodRefreshSample.dart';
 
 class FlutterRiverpodSample extends StatelessWidget {
   @override
@@ -41,6 +42,19 @@ class FlutterRiverpodSample extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => ConsumerStatefulWidgetSample()));
+              },
+            ),
+
+            //https://riverpod.dev/zh-hans/docs/case_studies/pull_to_refresh
+            //RiverpodRefresh Sample
+            ElevatedButton(
+              child: Text(
+                  "RiverpodRefresh Sample \n 一定要运行一下的命令行，不然Freezed不能够使用!!!! \n flutter pub run build_runner build "),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => RiverpodRefreshSample()));
               },
             ),
           ],

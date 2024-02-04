@@ -8,6 +8,7 @@ import 'sample/FirstScreenApp.dart';
 import 'sample/ListViewSample.dart';
 import 'sample/TabBarPageSample.dart';
 import 'sample/FirstRoute.dart';
+import 'sample/ChatGptSample.dart';
 import 'sample/FirstRouteCupertinoButton.dart';
 import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
@@ -92,6 +93,15 @@ class SampleMenu extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) =>
                         MyHomePage(title: 'Flutter Demo Home Page')));
+          },
+        ),
+
+        //ChatGpt Sample
+        ElevatedButton(
+          child: Text("ChatGpt Sample"),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ChatGptSample()));
           },
         ),
 
@@ -252,18 +262,7 @@ class SampleMenu extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const FirstRoute()));
           },
         ),
-        ElevatedButton(
-          child: Text("导航到一个新页面和返回 CupertinoButton"),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Scaffold(
-                          appBar: AppBar(),
-                          body: const FirstRouteCupertinoButton(),
-                        )));
-          },
-        ),
+
         ElevatedButton(
           child: Text("FirstScreenApp"),
           onPressed: () {

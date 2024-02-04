@@ -24,6 +24,10 @@ dependencies:
   flutter_riverpod: ^2.4.9
   riverpod_annotation: ^2.3.3
 
+  #chatGPT
+  flutter_dotenv: ^5.0.2
+  dart_openai: ^1.9.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

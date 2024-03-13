@@ -52,7 +52,7 @@ void main() async {
 
   runApp(
     // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
-    // 它不应该在 “MyApp” 内部，而是作为 “runApp” 的直接参数。
+    // 它不应该在 “MyApp” 内部，而是作为  “ runApp” 的直接参数。
     ProviderScope(
       child: MyApp(),
     ),

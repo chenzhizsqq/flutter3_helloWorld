@@ -15,6 +15,27 @@ class _FirebaseCloudFirestoreSampleState
   // 指定したドキュメントの情報
   String orderDocumentInfo = '';
 
+  // コレクション内のドキュメント一覧を取得
+  void getInfo() async {
+    var db = FirebaseFirestore.instance;
+
+    await db.collection("users").doc('id_abc').collection('orders').get().then(
+      (querySnapshot) {
+        print("Successfully completed");
+        var temp = "";
+        for (var docSnapshot in querySnapshot.docs) {
+          print('${docSnapshot.id} => ${docSnapshot.data()}');
+          temp = temp + '${docSnapshot.data()}';
+        }
+        setState(() {
+          orderDocumentInfo = temp;
+        });
+        print('orderDocumentInfo:$orderDocumentInfo');
+      },
+      onError: (e) => print("Error completing: $e"),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +76,7 @@ class _FirebaseCloudFirestoreSampleState
 
             //2222
             ElevatedButton(
-              child: Text('サブコレクション＋ドキュメント作成'),
+              child: Text('ドキュメント作成 abc 123'),
               onPressed: () async {
                 // サブコレクション内にドキュメント作成
                 await FirebaseFirestore.instance
@@ -64,6 +85,9 @@ class _FirebaseCloudFirestoreSampleState
                     .collection('orders') // サブコレクションID
                     .doc('id_123') // ドキュメントID << サブコレクション内のドキュメント
                     .set({'price': 600, 'date': '9/13'}); // データ
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
             ElevatedButton(
@@ -76,6 +100,9 @@ class _FirebaseCloudFirestoreSampleState
                     .collection('orders') // サブコレクションID
                     .doc('id_111') // ドキュメントID << サブコレクション内のドキュメント
                     .set({'price': 111, 'date': '9/13'}); // データ
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
             ElevatedButton(
@@ -88,6 +115,9 @@ class _FirebaseCloudFirestoreSampleState
                     .collection('orders') // サブコレクションID
                     .doc('id_222') // ドキュメントID << サブコレクション内のドキュメント
                     .set({'price': 222, 'date': '9/13'}); // データ
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
             ElevatedButton(
@@ -100,6 +130,9 @@ class _FirebaseCloudFirestoreSampleState
                     .collection('orders') // サブコレクションID
                     .doc('id_333') // ドキュメントID << サブコレクション内のドキュメント
                     .set({'price': 333, 'date': '9/13'}); // データ
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
 
@@ -131,40 +164,8 @@ class _FirebaseCloudFirestoreSampleState
             ElevatedButton(
               child: Text('get id_abc all orders '),
               onPressed: () async {
-                // コレクション内のドキュメント一覧を取得
-                var db = FirebaseFirestore.instance;
-
-                // await db
-                //     .collection("users")
-                //     .doc('id_abc')
-                //     .collection('orders')
-                //     .get()
-                //     .then((event) {
-                //   for (var doc in event.docs) {
-                //     print("${doc.id} => ${doc.data()}");
-                //   }
-                // });
-
-                await db
-                    .collection("users")
-                    .doc('id_abc')
-                    .collection('orders')
-                    .get()
-                    .then(
-                  (querySnapshot) {
-                    print("Successfully completed");
-                    var temp = "";
-                    for (var docSnapshot in querySnapshot.docs) {
-                      print('${docSnapshot.id} => ${docSnapshot.data()}');
-                      temp = temp + '${docSnapshot.data()}';
-                    }
-                    setState(() {
-                      orderDocumentInfo = temp;
-                    });
-                    print('orderDocumentInfo:$orderDocumentInfo');
-                  },
-                  onError: (e) => print("Error completing: $e"),
-                );
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
 
@@ -177,13 +178,16 @@ class _FirebaseCloudFirestoreSampleState
                     .collection('users')
                     .doc('id_abc')
                     .collection('orders')
-                    .doc('id_123')
+                    .doc('id_111')
                     .get();
                 // 取得したドキュメントの情報をUIに反映
                 setState(() {
                   orderDocumentInfo =
                       '${document['date']} ${document['price']}円';
                 });
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
 
@@ -195,13 +199,18 @@ class _FirebaseCloudFirestoreSampleState
                 await FirebaseFirestore.instance
                     .collection('users')
                     .doc('id_abc')
-                    .update({'age': 41});
+                    .collection('orders')
+                    .doc('id_111')
+                    .update({'price': 000, 'date': '0/0'});
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
 
             //6666
             ElevatedButton(
-              child: Text('ドキュメント削除'),
+              child: Text('ドキュメント削除 abc 123'),
               onPressed: () async {
                 // ドキュメント削除
                 await FirebaseFirestore.instance
@@ -210,6 +219,9 @@ class _FirebaseCloudFirestoreSampleState
                     .collection('orders')
                     .doc('id_123')
                     .delete();
+
+                //コレクション内のドキュメント一覧を取得
+                getInfo();
               },
             ),
 

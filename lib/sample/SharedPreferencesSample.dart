@@ -17,6 +17,17 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
   // 値を入力するための変数
   final TextEditingController _nameController = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+    getName().then((value) {
+      setState(() {
+        textInit = value;
+      });
+    });
+    print("initState end!!");
+  }
+
   // ドキュメント通りに、prefs.setStringで、String型のデータを保存
   _saveData() async {
     // _nameControllerを代入する
@@ -24,6 +35,11 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
     final prefs = await SharedPreferences.getInstance();
     // nameValueを"name"がキーのprefs.setStringで使う。
     await prefs.setString("name", nameValue);
+  }
+
+  getName() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('name');
   }
 
   // ドキュメント通りに、prefs.getStringでString型のデータを取得
@@ -68,7 +84,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
             ),
             Row(
               children: [
-                const SizedBox(width: 30),
+                const SizedBox(width: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.blue, // background
@@ -77,7 +93,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                   onPressed: _saveData,
                   child: Text('保存'),
                 ),
-                const SizedBox(width: 30),
+                const SizedBox(width: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green, // background
@@ -86,7 +102,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                   onPressed: _getData,
                   child: Text('表示'),
                 ),
-                const SizedBox(width: 30),
+                const SizedBox(width: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.red, // background

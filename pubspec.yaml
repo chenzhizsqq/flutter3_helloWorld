@@ -25,7 +25,6 @@ dependencies:
   riverpod_annotation: ^2.3.3
 
   json_annotation: ^4.8.1
-  json_serializable: ^6.8.0 # json处理库
 
 dev_dependencies:
   flutter_test:

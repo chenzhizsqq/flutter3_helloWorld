@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//https://qiita.com/kenta4327/items/d58a73cc85b944521ccc
 class JsonSerializableSample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

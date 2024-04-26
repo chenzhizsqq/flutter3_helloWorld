@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'book.dart';
 
 //https://qiita.com/kenta4327/items/d58a73cc85b944521ccc
 class JsonSerializableSample extends StatelessWidget {
@@ -18,7 +20,24 @@ class JsonSerializableSample extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // final jsonString =
+                    //     '{"id":123, "name":"THE BOOK", "price":1500, "author":{"id":999, "name":"sato"}}';
+
+                    // final jsonStringMap1 = jsonDecode(jsonString);
+                    // final author1 = Author(
+                    //     id: jsonStringMap1['author']['id'],
+                    //     name: jsonStringMap1['author']['name']);
+                    // final person1 = Book(
+                    //     id: jsonStringMap1['id'],
+                    //     name: jsonStringMap1['name'],
+                    //     author: author1);
+                    // print('id: ${person1.id}');
+                    // print('name: ${person1.name}');
+                    // print('price: ${person1.price}');
+                    // print('author_id: ${person1.author?.id}');
+                    // print('author_name: ${person1.author?.name}');
+                  },
                   icon: Icon(Icons.thumb_up),
                 ),
               ],

@@ -15,14 +15,16 @@ dependencies:
   http: ^0.13.0
 
   #firebase
-  #firebase_core: ^2.15.1
-  #firebase_auth: ^4.7.3
-  #cloud_firestore: ^4.4.5
-  #firebase_database: ^10.0.16
+  firebase_core: ^2.15.1
+  firebase_auth: ^4.7.3
+  cloud_firestore: ^4.4.5
+  firebase_database: ^10.0.16
 
   #flutter_riverpod
   flutter_riverpod: ^2.4.9
   riverpod_annotation: ^2.3.3
+
+  json_annotation: ^4.8.1
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +32,8 @@ dev_dependencies:
   flutter_lints: ^2.0.2
   build_runner: ^2.3.3
   freezed: ^2.3.2
+
+  json_serializable: ^6.8.0 # json处理库
 
   #flutter_riverpod
   custom_lint:

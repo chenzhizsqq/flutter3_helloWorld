@@ -1,5 +1,4 @@
 import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -36,9 +35,9 @@ class _FirebaseRealtimeDatabaseSampleState
   late StreamSubscription<DatabaseEvent> _counterSubscription;
   late StreamSubscription<DatabaseEvent> _messagesSubscription;
 
-  int _counter = 0;
-  String _kTestKey = 'Hello';
-  String _kTestValue = 'world!';
+  final int _counter = 0;
+  final String _kTestKey = 'Hello';
+  final String _kTestValue = 'world!';
   FirebaseException? _error;
 
   @override

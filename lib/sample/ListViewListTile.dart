@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListViewListTile extends StatelessWidget {
@@ -17,23 +15,23 @@ class ListViewListTile extends StatelessWidget {
         ),
         body: ListView(
           children: <Widget>[
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.map),
               title: Text('Map'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.photo_album),
               title: Text('Album'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.phone),
               title: Text('Phone'),
             ),
             ListTile(
-              title: Text('title'),
-              subtitle: Text('subtitle'),
+              title: const Text('title'),
+              subtitle: const Text('subtitle'),
               tileColor: Colors.green,
-              leading: Icon(Icons.account_circle),
+              leading: const Icon(Icons.account_circle),
               onTap: () {
                 print('onTap');
               },

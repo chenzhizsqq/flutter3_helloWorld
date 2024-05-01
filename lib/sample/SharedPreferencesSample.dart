@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:async';
 
 class SharedPreferencesSample extends StatefulWidget {
   const SharedPreferencesSample({Key? key}) : super(key: key);
@@ -65,21 +64,21 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
-        title: Text("ローカルにデータを保存"),
+        title: const Text("ローカルにデータを保存"),
       ),
       body: Container(
-        padding: EdgeInsets.all(32),
+        padding: const EdgeInsets.all(32),
         child: Column(
           children: [
             Text(
               textInit,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
               ),
             ),
             TextField(
               keyboardType: TextInputType.text,
-              decoration: InputDecoration(labelText: "お名前を入力してください"),
+              decoration: const InputDecoration(labelText: "お名前を入力してください"),
               controller: _nameController,
             ),
             Row(
@@ -91,7 +90,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                     onPrimary: Colors.white, // foreground
                   ),
                   onPressed: _saveData,
-                  child: Text('保存'),
+                  child: const Text('保存'),
                 ),
                 const SizedBox(width: 20),
                 ElevatedButton(
@@ -100,7 +99,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                     onPrimary: Colors.white, // foreground
                   ),
                   onPressed: _getData,
-                  child: Text('表示'),
+                  child: const Text('表示'),
                 ),
                 const SizedBox(width: 20),
                 ElevatedButton(
@@ -109,7 +108,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                     onPrimary: Colors.white, // foreground
                   ),
                   onPressed: _removeData,
-                  child: Text('削除'),
+                  child: const Text('削除'),
                 ),
               ],
             ),

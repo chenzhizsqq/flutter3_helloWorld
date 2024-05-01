@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert';
 
 class DioSample extends StatefulWidget {
   const DioSample({Key? key}) : super(key: key);

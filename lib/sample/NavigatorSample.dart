@@ -1,29 +1,27 @@
-import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
-import 'DioSample.dart';
 
 class NavigatorSample extends StatelessWidget {
+  const NavigatorSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ホーム"),
+        title: const Text("ホーム"),
       ),
       body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
             TextButton(
-              child: Text("1ページ目に遷移する"),
+              child: const Text("1ページ目に遷移する"),
               onPressed: () async {
                 // （1） 指定した画面に遷移する
                 var result = await Navigator.push(
                     context,
                     MaterialPageRoute(
                         // （2） 実際に表示するページ(ウィジェット)を指定する
-                        builder: (context) => FirstPage()));
+                        builder: (context) => const FirstPage()));
                 print("FirstPage push result: $result");
               },
             ),
@@ -33,16 +31,18 @@ class NavigatorSample extends StatelessWidget {
 }
 
 class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("ページ(1)")),
+        appBar: AppBar(title: const Text("ページ(1)")),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
               TextButton(
-                child: Text("最初のページに戻る(pop)"),
+                child: const Text("最初のページに戻る(pop)"),
                 // （1） 前の画面に戻る
                 onPressed: () {
                   //Navigator.pop(context);
@@ -51,25 +51,26 @@ class FirstPage extends StatelessWidget {
                 },
               ),
               TextButton(
-                child: Text("2ページ目に遷移する\n(ホームに戻るpushReplacement)"),
+                child: const Text("2ページ目に遷移する\n(ホームに戻るpushReplacement)"),
                 // SecondPage
                 onPressed: () {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SecondPage(),
+                        builder: (context) => const SecondPage(),
                       ));
                 },
               ),
               ElevatedButton(
-                child: Text("NavigationButtonScreenに遷移する"),
+                child: const Text("NavigationButtonScreenに遷移する"),
                 onPressed: () {
                   // （1） 指定した画面に遷移する
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           // （2） 実際に表示するページ(ウィジェット)を指定する
-                          builder: (context) => NavigationButtonScreen()));
+                          builder: (context) =>
+                              const NavigationButtonScreen()));
                 },
               ),
             ])));
@@ -77,16 +78,18 @@ class FirstPage extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("ページ(2)")),
+        appBar: AppBar(title: const Text("ページ(2)")),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
               TextButton(
-                child: Text("ホームに戻る"),
+                child: const Text("ホームに戻る"),
                 // （1） ホームに戻る
                 // onPressed: () {
                 //   Navigator.pop(context);
@@ -100,16 +103,18 @@ class SecondPage extends StatelessWidget {
 }
 
 class NavigationButtonScreen extends StatelessWidget {
+  const NavigationButtonScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("NavigationButtonScreen"),
+          title: const Text("NavigationButtonScreen"),
           leading: GestureDetector(
             onTap: () {
               Navigator.of(context).pop("NavigationButtonScreenから渡す");
             },
-            child: Icon(Icons.arrow_back_ios),
+            child: const Icon(Icons.arrow_back_ios),
           )),
       body: Center(
         child: Column(
@@ -120,12 +125,12 @@ class NavigationButtonScreen extends StatelessWidget {
                 var result = await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => NavigatorPushScreen(),
+                    builder: (context) => const NavigatorPushScreen(),
                   ),
                 );
                 print("Navigator push result: $result");
               },
-              child: Text("Navigator push"),
+              child: const Text("Navigator push"),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -133,12 +138,13 @@ class NavigationButtonScreen extends StatelessWidget {
                   // ・・・②
                   context,
                   MaterialPageRoute(
-                    builder: (context) => NavigatorPushReplacementScreen(),
+                    builder: (context) =>
+                        const NavigatorPushReplacementScreen(),
                   ),
                 );
                 print("Navigator pushReplacement result: $result");
               },
-              child: Text("Navigator pushReplacement"),
+              child: const Text("Navigator pushReplacement"),
             ),
 
             //NavigatorPopUntilScreen
@@ -148,12 +154,12 @@ class NavigationButtonScreen extends StatelessWidget {
                   // ・・・②
                   context,
                   MaterialPageRoute(
-                    builder: (context) => NavigatorPopUntilScreen(),
+                    builder: (context) => const NavigatorPopUntilScreen(),
                   ),
                 );
                 print("NavigatorPopUntilScreen result: $result");
               },
-              child: Text("Navigator PopUntil"),
+              child: const Text("Navigator PopUntil"),
             ),
           ],
         ),
@@ -163,17 +169,19 @@ class NavigationButtonScreen extends StatelessWidget {
 }
 
 class NavigatorPushScreen extends StatelessWidget {
+  const NavigatorPushScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("NavigatorPushScreen"),
+        title: const Text("NavigatorPushScreen"),
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context)
                 .pop("NavigatorPushScreen から　leading onTap() 渡す");
           },
-          child: Icon(Icons.arrow_back_ios),
+          child: const Icon(Icons.arrow_back_ios),
         ),
       ),
       // body: Center(
@@ -182,7 +190,7 @@ class NavigatorPushScreen extends StatelessWidget {
 
       body: Center(
         child: TextButton(
-          child: Text(
+          child: const Text(
               "Navigator.pushを使用 :\n Navigator.pop(context) \n NavigationButtonScreen -> NavigationButtonScreen"),
           // ホーム画面に渡せない
           onPressed: () {
@@ -196,22 +204,24 @@ class NavigatorPushScreen extends StatelessWidget {
 }
 
 class NavigatorPushReplacementScreen extends StatelessWidget {
+  const NavigatorPushReplacementScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("NavigatorPushReplacementScreen"),
+        title: const Text("NavigatorPushReplacementScreen"),
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context)
                 .pop("NavigatorPushReplacementScreen から　leading onTap() 渡す");
           },
-          child: Icon(Icons.arrow_back_ios),
+          child: const Icon(Icons.arrow_back_ios),
         ),
       ),
       body: Center(
         child: TextButton(
-          child: Text(
+          child: const Text(
               "pushReplacement after :\n Navigator.pop(context) \n NavigatorPushReplacementScreen -> ページ(1)"),
           // ホーム画面に渡せない
           onPressed: () {
@@ -225,22 +235,24 @@ class NavigatorPushReplacementScreen extends StatelessWidget {
 }
 
 class NavigatorPopUntilScreen extends StatelessWidget {
+  const NavigatorPopUntilScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navigator.PopUntilを使用"),
+        title: const Text("Navigator.PopUntilを使用"),
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context)
                 .pop("NavigatorPopUntilScreen から　leading onTap() 渡す");
           },
-          child: Icon(Icons.arrow_back_ios),
+          child: const Icon(Icons.arrow_back_ios),
         ),
       ),
       body: Center(
         child: TextButton(
-          child: Text("PopUntilホームに戻る :\n 最初のページに戻る(pop)"),
+          child: const Text("PopUntilホームに戻る :\n 最初のページに戻る(pop)"),
           onPressed: () {
             Navigator.popUntil(context, (route) => route.isFirst);
           },

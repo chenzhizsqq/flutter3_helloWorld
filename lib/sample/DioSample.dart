@@ -12,10 +12,12 @@ class _DioSampleState extends State<DioSample> {
   var jsonList;
   @override
   void initState() {
+    super.initState();
+
     getData();
   }
 
-  void getData() async {
+  Future<void> getData() async {
     try {
       // APIからの応答を保持する変数
       final response = await Dio()

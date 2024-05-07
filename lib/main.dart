@@ -91,23 +91,23 @@ class SampleMenu extends StatelessWidget {
         ),
 
         //FlutterRiverpodSample.dart
-        // ElevatedButton(
-        //   child: Text("FlutterRiverpodSample"),
-        //   onPressed: () {
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => Scaffold(
-        //                   appBar: AppBar(
-        //                     title: Text(
-        //                       'FlutterRiverpod Sample',
-        //                     ),
-        //                     centerTitle: true,
-        //                   ),
-        //                   body: FlutterRiverpodSample(),
-        //                 )));
-        //   },
-        // ),
+        ElevatedButton(
+          child: const Text("FlutterRiverpodSample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(
+                            title: const Text(
+                              'FlutterRiverpod Sample',
+                            ),
+                            centerTitle: true,
+                          ),
+                          body: FlutterRiverpodSample(),
+                        )));
+          },
+        ),
 
         ElevatedButton(
           child: Text("Firebase Sample Login"),

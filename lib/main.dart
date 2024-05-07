@@ -12,10 +12,10 @@ import 'sample/FirstRouteCupertinoButton.dart';
 import 'sample/StateSample.dart';
 import 'sample/ButtonSimple.dart';
 import 'sample/FloatingActionButton2ListPageSample.dart';
-// import 'sample/FirebaseSample.dart';
-// import 'sample/FirebaseCloudFirestoreSample.dart';
-// import 'sample/FirebaseFirestoreStream.dart';
-// import 'sample/FirebaseRealtimeDatabaseSample.dart';
+import 'sample/FirebaseSample.dart';
+import 'sample/FirebaseCloudFirestoreSample.dart';
+import 'sample/FirebaseFirestoreStream.dart';
+import 'sample/FirebaseRealtimeDatabaseSample.dart';
 import 'sample/DioSample.dart';
 import 'sample/SharedPreferencesSample.dart';
 import 'sample/NavigatorSample.dart';
@@ -109,53 +109,53 @@ class SampleMenu extends StatelessWidget {
         //   },
         // ),
 
-        // ElevatedButton(
-        //   child: Text("Firebase Sample Login"),
-        //   onPressed: () {
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => Scaffold(
-        //                   appBar: AppBar(),
-        //                   body: FirebaseSample(),
-        //                 )));
-        //   },
-        // ),
-        // ElevatedButton(
-        //   child: Text(
-        //       "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
-        //   onPressed: () {
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => Scaffold(
-        //                   appBar: AppBar(),
-        //                   body: FirebaseCloudFirestoreSample(),
-        //                 )));
-        //   },
-        // ),
-        // ElevatedButton(
-        //   child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
-        //   onPressed: () {
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => Scaffold(
-        //                   appBar: AppBar(),
-        //                   body: FirebaseFirestoreStream(),
-        //                 )));
-        //   },
-        // ),
-        // ElevatedButton(
-        //   child: Text(
-        //       "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
-        //   onPressed: () {
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => FirebaseRealtimeDatabaseSample()));
-        //   },
-        // ),
+        ElevatedButton(
+          child: Text("Firebase Sample Login"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "FirebaseCloudFirestore Sample       - Firebase Firestore data"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseCloudFirestoreSample(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text("FirebaseFirestore use Stream Sample - 能够实时更新数据"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(),
+                          body: FirebaseFirestoreStream(),
+                        )));
+          },
+        ),
+        ElevatedButton(
+          child: Text(
+              "FirebaseRealtimeDatabaseSample       - Firebase Realtime json"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FirebaseRealtimeDatabaseSample()));
+          },
+        ),
         ElevatedButton(
           child: Text(
               "DioSample Http请求库-dio  人气较高的dio库  60%:暂时例子还没有完成，因为在这个lib对于web需要设定 \ndio 一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传/下载、超时等。"),

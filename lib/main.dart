@@ -28,36 +28,31 @@ import 'package:firebase_database/firebase_database.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() => runApp(const MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(
-//     options: const FirebaseOptions(
-//       apiKey: "AIzaSyD47XXUdgweBCLi3ZOCVE-MJVY8QsQNyeQ",
-//       authDomain: "fluttertest-15e1a.firebaseapp.com",
-//       projectId: "fluttertest-15e1a",
-//       storageBucket: "fluttertest-15e1a.appspot.com",
-//       messagingSenderId: "868931261169",
-//       appId: "1:868931261169:web:130ff405f609000002cf50",
-//       databaseURL:
-//           "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app/",
-//     ),
-//   );
-//
-//   //判断是否android虚拟机
-//   if (USE_DATABASE_EMULATOR) {
-//     FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
-//   }
-//
-//   runApp(
-//     // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
-//     // 它不应该在 “MyApp” 内部，而是作为 “runApp” 的直接参数。
-//     ProviderScope(
-//       child: MyApp(),
-//     ),
-//   );
-// }
+//void main() => runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform
+  );
+
+  //判断是否android虚拟机
+  // if (USE_DATABASE_EMULATOR) {
+  //   FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
+  // }
+
+  runApp(
+    // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
+    // 它不应该在 “MyApp” 内部，而是作为 “runApp” 的直接参数。
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

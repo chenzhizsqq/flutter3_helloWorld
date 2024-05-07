@@ -20,6 +20,8 @@ import 'sample/DioSample.dart';
 import 'sample/SharedPreferencesSample.dart';
 import 'sample/NavigatorSample.dart';
 import 'sample/FlutterRiverpodSample.dart';
+import 'sample/JsonSerializableDir/JsonSerializableSample.dart';
+import 'sample/RestApi.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -41,9 +43,9 @@ void main() async {
   );
 
   //判断是否android虚拟机
-  // if (USE_DATABASE_EMULATOR) {
-  //   FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
-  // }
+  if (USE_DATABASE_EMULATOR) {
+    FirebaseDatabase.instance.useDatabaseEmulator(emulatorHost, emulatorPort);
+  }
 
   runApp(
     // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
@@ -87,6 +89,44 @@ class SampleMenu extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) =>
                         MyHomePage(title: 'Flutter Demo Home Page')));
+          },
+        ),
+
+        //RestApi.dart
+        ElevatedButton(
+          child: const Text("Rest Api Sample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(
+                            title: const Text(
+                              'Rest Api Sample',
+                            ),
+                            centerTitle: true,
+                          ),
+                          body: const RestApi(title: 'Rest Api'),
+                        )));
+          },
+        ),
+
+        //JsonSerializableSample.dart
+        ElevatedButton(
+          child: const Text("Json Serializable Sample"),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Scaffold(
+                          appBar: AppBar(
+                            title: const Text(
+                              'Json Serializable Sample',
+                            ),
+                            centerTitle: true,
+                          ),
+                          body: JsonSerializableSample(),
+                        )));
           },
         ),
 

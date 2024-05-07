@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class FirebaseCloudFirestoreSample extends StatefulWidget {
@@ -21,16 +20,13 @@ class _FirebaseCloudFirestoreSampleState
 
     await db.collection("users").doc('id_abc').collection('orders').get().then(
       (querySnapshot) {
-        print("Successfully completed");
         var temp = "";
         for (var docSnapshot in querySnapshot.docs) {
-          print('${docSnapshot.id} => ${docSnapshot.data()}');
           temp = temp + '${docSnapshot.data()}';
         }
         setState(() {
           orderDocumentInfo = temp;
         });
-        print('orderDocumentInfo:$orderDocumentInfo');
       },
       onError: (e) => print("Error completing: $e"),
     );
@@ -44,7 +40,7 @@ class _FirebaseCloudFirestoreSampleState
           children: <Widget>[
             //11111
             ElevatedButton(
-              child: Text('コレクション＋ドキュメント作成'),
+              child: const Text('コレクション＋ドキュメント作成'),
               onPressed: () async {
                 // ドキュメント作成
                 await FirebaseFirestore.instance
@@ -54,7 +50,7 @@ class _FirebaseCloudFirestoreSampleState
               },
             ),
             ElevatedButton(
-              child: Text('insert bbb'),
+              child: const Text('insert bbb'),
               onPressed: () async {
                 // ドキュメント作成
                 await FirebaseFirestore.instance
@@ -64,7 +60,7 @@ class _FirebaseCloudFirestoreSampleState
               },
             ),
             ElevatedButton(
-              child: Text('insert ccc'),
+              child: const Text('insert ccc'),
               onPressed: () async {
                 // ドキュメント作成
                 await FirebaseFirestore.instance
@@ -76,7 +72,7 @@ class _FirebaseCloudFirestoreSampleState
 
             //2222
             ElevatedButton(
-              child: Text('ドキュメント作成 abc 123'),
+              child: const Text('ドキュメント作成 abc 123'),
               onPressed: () async {
                 // サブコレクション内にドキュメント作成
                 await FirebaseFirestore.instance
@@ -91,7 +87,7 @@ class _FirebaseCloudFirestoreSampleState
               },
             ),
             ElevatedButton(
-              child: Text('abc 111'),
+              child: const Text('abc 111'),
               onPressed: () async {
                 // サブコレクション内にドキュメント作成
                 await FirebaseFirestore.instance
@@ -106,7 +102,7 @@ class _FirebaseCloudFirestoreSampleState
               },
             ),
             ElevatedButton(
-              child: Text('abc 222'),
+              child: const Text('abc 222'),
               onPressed: () async {
                 // サブコレクション内にドキュメント作成
                 await FirebaseFirestore.instance
@@ -121,7 +117,7 @@ class _FirebaseCloudFirestoreSampleState
               },
             ),
             ElevatedButton(
-              child: Text('abc 333'),
+              child: const Text('abc 333'),
               onPressed: () async {
                 // サブコレクション内にドキュメント作成
                 await FirebaseFirestore.instance
@@ -162,7 +158,7 @@ class _FirebaseCloudFirestoreSampleState
             */
 
             ElevatedButton(
-              child: Text('get id_abc all orders '),
+              child: const Text('get id_abc all orders '),
               onPressed: () async {
                 //コレクション内のドキュメント一覧を取得
                 getInfo();
@@ -171,7 +167,7 @@ class _FirebaseCloudFirestoreSampleState
 
             //4444
             ElevatedButton(
-              child: Text('ドキュメントを指定して取得'),
+              child: const Text('ドキュメントを指定して取得'),
               onPressed: () async {
                 // コレクションIDとドキュメントIDを指定して取得
                 final document = await FirebaseFirestore.instance
@@ -193,7 +189,7 @@ class _FirebaseCloudFirestoreSampleState
 
             //5555
             ElevatedButton(
-              child: Text('ドキュメント更新'),
+              child: const Text('ドキュメント更新'),
               onPressed: () async {
                 // ドキュメント更新
                 await FirebaseFirestore.instance
@@ -210,7 +206,7 @@ class _FirebaseCloudFirestoreSampleState
 
             //6666
             ElevatedButton(
-              child: Text('ドキュメント削除 abc 123'),
+              child: const Text('ドキュメント削除 abc 123'),
               onPressed: () async {
                 // ドキュメント削除
                 await FirebaseFirestore.instance

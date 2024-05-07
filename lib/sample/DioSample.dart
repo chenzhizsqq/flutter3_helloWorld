@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert';
 
 class DioSample extends StatefulWidget {
   const DioSample({Key? key}) : super(key: key);
@@ -13,10 +12,12 @@ class _DioSampleState extends State<DioSample> {
   var jsonList;
   @override
   void initState() {
+    super.initState();
+
     getData();
   }
 
-  void getData() async {
+  Future<void> getData() async {
     try {
       // APIからの応答を保持する変数
       final response = await Dio()
@@ -40,7 +41,7 @@ class _DioSampleState extends State<DioSample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'GeeksForGeeks',
           style: TextStyle(color: Colors.white),
         ),

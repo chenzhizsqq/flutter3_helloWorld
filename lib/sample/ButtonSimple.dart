@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 //https://www.flutter-study.dev/widgets/button-widget
 class ButtonSimple extends StatelessWidget {
+  const ButtonSimple({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "868931261169",
+    "firebase_url": "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fluttertest-15e1a",
+    "storage_bucket": "fluttertest-15e1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868931261169:android:7760a9cfa758056302cf50",
+        "android_client_info": {
+          "package_name": "com.example.helloWorldChenFlutterTest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMRRMQeg--fv2XR-GZLwLwVr0ajLFja3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

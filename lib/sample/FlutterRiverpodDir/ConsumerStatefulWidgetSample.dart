@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'package:flutter/cupertino.dart';
 
 final counterProvider = StateNotifierProvider<Counter, int>((ref) {
   return Counter();
@@ -15,6 +13,8 @@ class Counter extends StateNotifier<int> {
 }
 
 class ConsumerStatefulWidgetSample extends ConsumerStatefulWidget {
+  const ConsumerStatefulWidgetSample({super.key});
+
   @override
   ConsumerState<ConsumerStatefulWidgetSample> createState() =>
       _ConsumerStatefulWidgetSampleState();
@@ -28,7 +28,7 @@ class _ConsumerStatefulWidgetSampleState
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(' Sample'),
+          title: const Text(' Sample'),
         ),
         body: Center(
             child: Column(
@@ -36,7 +36,7 @@ class _ConsumerStatefulWidgetSampleState
                 children: <Widget>[
               Text('Button tapped $count time${count == 1 ? '' : 's'}'),
               TextButton(
-                child: Text("最初のページに戻る(pop)"),
+                child: const Text("最初のページに戻る(pop)"),
                 // （1） 前の画面に戻る
                 onPressed: () {
                   //Navigator.pop(context);

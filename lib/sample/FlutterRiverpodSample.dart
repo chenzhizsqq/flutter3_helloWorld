@@ -5,6 +5,8 @@ import 'FlutterRiverpodDir/ConsumerStatefulWidgetSample.dart';
 import 'FlutterRiverpodDir/RiverpodDiSample.dart';
 
 class FlutterRiverpodSample extends StatelessWidget {
+  const FlutterRiverpodSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class FlutterRiverpodSample extends StatelessWidget {
           children: <Widget>[
             //https://yamochun-dev.cloud/dev/flutter/about-riverpod/
             ElevatedButton(
-              child: Text("FlutterRiverpodHelloworld"),
+              child: const Text("FlutterRiverpodHelloworld"),
               onPressed: () {
                 Navigator.push(
                     context,
@@ -24,7 +26,7 @@ class FlutterRiverpodSample extends StatelessWidget {
             ),
 
             ElevatedButton(
-              child: Text("NoConsumerWidget"),
+              child: const Text("NoConsumerWidget"),
               onPressed: () {
                 Navigator.push(
                     context,
@@ -35,7 +37,7 @@ class FlutterRiverpodSample extends StatelessWidget {
 
             //ConsumerStatefulWidget Sample
             ElevatedButton(
-              child: Text(
+              child: const Text(
                   "ConsumerStatefulWidget Sample \n StatefulWidget + State = ConsumerStatefulWidget + ConsumerState"),
               onPressed: () {
                 Navigator.push(
@@ -48,12 +50,12 @@ class FlutterRiverpodSample extends StatelessWidget {
             //https://riverpod.dev/zh-hans/docs/case_studies/pull_to_refresh
             //RiverpodRefresh Sample
             ElevatedButton(
-              child: Text("Riverpod 的整个APP的DI"),
+              child: const Text("Riverpod 的整个APP的DI"),
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => RiverpodDiSample()));
+                        builder: (context) => const RiverpodDiSample()));
               },
             ),
           ],

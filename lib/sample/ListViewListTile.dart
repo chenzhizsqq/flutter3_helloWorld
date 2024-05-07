@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ListViewListTile extends StatelessWidget {
@@ -33,7 +34,9 @@ class ListViewListTile extends StatelessWidget {
               tileColor: Colors.green,
               leading: const Icon(Icons.account_circle),
               onTap: () {
-                print('onTap');
+                if (kDebugMode) {
+                  print('onTap');
+                }
               },
             ),
           ],

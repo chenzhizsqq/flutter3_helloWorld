@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../main.dart';
@@ -9,6 +8,8 @@ const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 //void main() => runApp(MyApp());
 
 class FirstScreenApp extends StatelessWidget {
+  const FirstScreenApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

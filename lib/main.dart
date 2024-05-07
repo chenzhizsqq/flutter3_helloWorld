@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'sample/GridViewSample.dart';
 import 'sample/ListViewPage.dart';
@@ -23,15 +22,11 @@ import 'sample/FlutterRiverpodSample.dart';
 import 'sample/JsonSerializableDir/JsonSerializableSample.dart';
 import 'sample/RestApi.dart';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 
 //void main() => runApp(const MyApp());
@@ -50,7 +45,7 @@ void main() async {
   runApp(
     // 为了安装 Riverpod，我们需要将这个小组件添加到所有的小组件之上。
     // 它不应该在 “MyApp” 内部，而是作为 “runApp” 的直接参数。
-    ProviderScope(
+    const ProviderScope(
       child: MyApp(),
     ),
   );

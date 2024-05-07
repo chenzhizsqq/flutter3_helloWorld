@@ -27,6 +27,8 @@ class CounterTwo extends StateNotifier<int> {
 //StatelessWidget = ConsumerWidget
 //StatefulWidget + State = ConsumerStatefulWidget + ConsumerState
 class FlutterRiverpodHelloworld extends ConsumerWidget {
+  const FlutterRiverpodHelloworld({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     //追踪Counter
@@ -37,7 +39,7 @@ class FlutterRiverpodHelloworld extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('FlutterRiverpod Helloworld'),
+        title: const Text('FlutterRiverpod Helloworld'),
       ),
       body: Center(
         child: Column(
@@ -53,7 +55,7 @@ class FlutterRiverpodHelloworld extends ConsumerWidget {
             ),
 
             //CounterTwo
-            Text(
+            const Text(
               'CountTwo:',
             ),
             Text(
@@ -61,7 +63,7 @@ class FlutterRiverpodHelloworld extends ConsumerWidget {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             ElevatedButton(
-              child: Text("CounterTwo Increment"),
+              child: const Text("CounterTwo Increment"),
               onPressed: () {
                 ref.read(counterProviderTwo.notifier).increment();
               },
@@ -74,7 +76,7 @@ class FlutterRiverpodHelloworld extends ConsumerWidget {
           ref.read(counterProvider.notifier).increment();
         },
         tooltip: 'Counter Increment',
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

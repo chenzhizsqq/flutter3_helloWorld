@@ -16,7 +16,7 @@ class FirebaseSample extends StatelessWidget {
               onPressed: () async {
                 await Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) {
-                    return LoginPage();
+                    return const LoginPage();
                   }),
                 );
               },
@@ -27,7 +27,7 @@ class FirebaseSample extends StatelessWidget {
               onPressed: () async {
                 await Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) {
-                    return RegisterPage();
+                    return const RegisterPage();
                   }),
                 );
               },
@@ -87,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 // メッセージ表示
                 child: Text(infoText),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 // ユーザー登録ボタン
                 child: ElevatedButton(
@@ -104,7 +104,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       // ユーザー登録に成功した場合
                       await Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (context) {
-                          return FirebaseSample();
+                          return const FirebaseSample();
                         }),
                       );
                     } catch (e) {
@@ -119,7 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Container(
                 padding: const EdgeInsets.all(8),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 // ユーザー登録ボタン
                 child: ElevatedButton(
@@ -127,7 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   onPressed: () async {
                     await Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) {
-                        return FirebaseSample();
+                        return const FirebaseSample();
                       }),
                     );
                   },
@@ -188,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                 // メッセージ表示
                 child: Text(infoText),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 // ユーザー登録ボタン
                 child: ElevatedButton(
@@ -217,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 padding: const EdgeInsets.all(8),
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 // ユーザー登録ボタン
                 child: ElevatedButton(
@@ -225,7 +225,7 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () async {
                     await Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) {
-                        return FirebaseSample();
+                        return const FirebaseSample();
                       }),
                     );
                   },

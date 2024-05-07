@@ -22,7 +22,7 @@ class JsonSerializableSample extends StatelessWidget {
                 ElevatedButton(
                   child: const Text('把json信息展示出来'),
                   onPressed: () async {
-                    final jsonString =
+                    const jsonString =
                         '{"id":123, "name":"THE BOOK", "price":1500, "author":{"id":999, "name":"sato"}}';
 
                     final jsonStringMap1 = jsonDecode(jsonString);
@@ -39,15 +39,7 @@ class JsonSerializableSample extends StatelessWidget {
                     print('author_id: ${person1.author?.id}');
                     print('author_name: ${person1.author?.name}');
 
-                    var message = 'id: ${person1.id}' +
-                        '\n' +
-                        'name: ${person1.name}' +
-                        '\n' +
-                        'price: ${person1.price}' +
-                        '\n' +
-                        'author_id: ${person1.author?.id}' +
-                        '\n' +
-                        'author_name: ${person1.author?.name}';
+                    var message = 'id: ${person1.id}\nname: ${person1.name}\nprice: ${person1.price}\nauthor_id: ${person1.author?.id}\nauthor_name: ${person1.author?.name}';
 
                     final String? selectedText = await showDialog<String>(
                         context: context,
@@ -69,7 +61,7 @@ class JsonSerializableSample extends StatelessWidget {
 class SimpleDialogSample extends StatelessWidget {
   final String title;
   final String message;
-  SimpleDialogSample({Key? key, required this.title, required this.message})
+  const SimpleDialogSample({Key? key, required this.title, required this.message})
       : super(key: key);
 
   @override

@@ -21,6 +21,8 @@ final emulatorHost =
         : 'localhost';
 
 class FirebaseRealtimeDatabaseSample extends StatefulWidget {
+  const FirebaseRealtimeDatabaseSample({super.key});
+
   @override
   _FirebaseRealtimeDatabaseSampleState createState() =>
       _FirebaseRealtimeDatabaseSampleState();
@@ -67,7 +69,6 @@ class _FirebaseRealtimeDatabaseSampleState
     setState(() {
       initialized = true;
     });
-    print("init() end");
   }
 
   Future<void> _increment() async {
@@ -85,9 +86,9 @@ class _FirebaseRealtimeDatabaseSampleState
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text('Firebase Realtime Database Sample'),
+        title: const Text('Firebase Realtime Database Sample'),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           children: <Widget>[
             Text(' Realtime Database - 实时数据库 - 规则 一定要把rule设定好'),

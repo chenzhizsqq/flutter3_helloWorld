@@ -9,34 +9,34 @@ class TabBarPageSample extends StatelessWidget {
       length: 6,
       child: Scaffold(
           appBar: AppBar(
-            bottom: TabBar(
+            bottom: const TabBar(
               tabs: [
-                Row(children: const [
+                Row(children: [
                   Icon(Icons.directions_car),
                   SizedBox(width: 5),
                   Text("Car")
                 ]),
-                Row(children: const [
+                Row(children: [
                   Icon(Icons.directions_transit),
                   SizedBox(width: 5),
                   Text("Transit")
                 ]),
-                Row(children: const [
+                Row(children: [
                   Icon(Icons.directions_bike),
                   SizedBox(width: 5),
                   Text("Bike")
                 ]),
-                Row(children: const [
+                Row(children: [
                   Icon(Icons.directions_boat),
                   SizedBox(width: 5),
                   Text("Boat")
                 ]),
-                Row(children: const [
+                Row(children: [
                   Icon(Icons.directions_railway),
                   SizedBox(width: 5),
                   Text("Railway")
                 ]),
-                Row(children: const [
+                Row(children: [
                   Icon(Icons.directions_bus),
                   SizedBox(width: 5),
                   Text("Bus")

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 //https://www.flutter-study.dev/todo-app/add-page
 class FloatingActionButton2ListPageSample extends StatelessWidget {
+  const FloatingActionButton2ListPageSample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,13 +17,15 @@ class FloatingActionButton2ListPageSample extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // リスト一覧画面を表示
-      home: TodoListPage(),
+      home: const TodoListPage(),
     );
   }
 }
 
 // リスト一覧画面用Widget
 class TodoListPage extends StatefulWidget {
+  const TodoListPage({super.key});
+
   @override
   _TodoListPageState createState() => _TodoListPageState();
 }
@@ -35,7 +39,7 @@ class _TodoListPageState extends State<TodoListPage> {
     return Scaffold(
       // AppBarを表示し、タイトルも設定
       appBar: AppBar(
-        title: Text('リスト一覧'),
+        title: const Text('リスト一覧'),
       ),
       // データを元にListViewを作成
       body: ListView.builder(
@@ -66,13 +70,15 @@ class _TodoListPageState extends State<TodoListPage> {
             });
           }
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
 
 class TodoAddPage extends StatefulWidget {
+  const TodoAddPage({super.key});
+
   @override
   _TodoAddPageState createState() => _TodoAddPageState();
 }
@@ -90,12 +96,12 @@ class _TodoAddPageState extends State<TodoAddPage> {
       ),
       body: Container(
         // 余白を付ける
-        padding: EdgeInsets.all(64),
+        padding: const EdgeInsets.all(64),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // 入力されたテキストを表示
-            Text(_text, style: TextStyle(color: Colors.blue)),
+            Text(_text, style: const TextStyle(color: Colors.blue)),
             const SizedBox(height: 8),
             // テキスト入力
             TextField(
@@ -119,11 +125,11 @@ class _TodoAddPageState extends State<TodoAddPage> {
                   // "pop"の引数から前の画面にデータを渡す
                   Navigator.of(context).pop(_text);
                 },
-                child: Text('リスト追加', style: TextStyle(color: Colors.white)),
+                child: const Text('リスト追加', style: TextStyle(color: Colors.white)),
               ),
             ),
             const SizedBox(height: 8),
-            Container(
+            SizedBox(
               // 横幅いっぱいに広げる
               width: double.infinity,
               // キャンセルボタン
@@ -133,7 +139,7 @@ class _TodoAddPageState extends State<TodoAddPage> {
                   // "pop"で前の画面に戻る
                   Navigator.of(context).pop();
                 },
-                child: Text('キャンセル'),
+                child: const Text('キャンセル'),
               ),
             ),
           ],

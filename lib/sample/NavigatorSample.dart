@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class NavigatorSample extends StatelessWidget {
@@ -22,7 +23,9 @@ class NavigatorSample extends StatelessWidget {
                     MaterialPageRoute(
                         // （2） 実際に表示するページ(ウィジェット)を指定する
                         builder: (context) => const FirstPage()));
-                print("FirstPage push result: $result");
+                if (kDebugMode) {
+                  print("FirstPage push result: $result");
+                }
               },
             ),
           ])),
@@ -128,7 +131,9 @@ class NavigationButtonScreen extends StatelessWidget {
                     builder: (context) => const NavigatorPushScreen(),
                   ),
                 );
-                print("Navigator push result: $result");
+                if (kDebugMode) {
+                  print("Navigator push result: $result");
+                }
               },
               child: const Text("Navigator push"),
             ),
@@ -142,7 +147,9 @@ class NavigationButtonScreen extends StatelessWidget {
                         const NavigatorPushReplacementScreen(),
                   ),
                 );
-                print("Navigator pushReplacement result: $result");
+                if (kDebugMode) {
+                  print("Navigator pushReplacement result: $result");
+                }
               },
               child: const Text("Navigator pushReplacement"),
             ),
@@ -157,7 +164,9 @@ class NavigationButtonScreen extends StatelessWidget {
                     builder: (context) => const NavigatorPopUntilScreen(),
                   ),
                 );
-                print("NavigatorPopUntilScreen result: $result");
+                if (kDebugMode) {
+                  print("NavigatorPopUntilScreen result: $result");
+                }
               },
               child: const Text("Navigator PopUntil"),
             ),

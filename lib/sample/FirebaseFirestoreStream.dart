@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 // [START listen_to_realtime_updates_listen_for_updates2]
 class FirebaseFirestoreStream extends StatefulWidget {
+  const FirebaseFirestoreStream({super.key});
+
   @override
   _FirebaseFirestoreStreamState createState() =>
       _FirebaseFirestoreStreamState();

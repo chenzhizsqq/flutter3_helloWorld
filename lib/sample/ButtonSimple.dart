@@ -13,8 +13,8 @@ class ButtonSimple extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.only(top: 32),
-              child: const Text('IconButton'),
+              padding: EdgeInsets.only(top: 32),
+              child: Text('IconButton'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -36,31 +36,31 @@ class ButtonSimple extends StatelessWidget {
               ],
             ),
             Container(
-              padding: const EdgeInsets.only(top: 32),
-              child: const Text('アイコン＋テキスト'),
+              padding: EdgeInsets.only(top: 32),
+              child: Text('アイコン＋テキスト'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 TextButton.icon(
                   onPressed: () {},
-                  icon: const Icon(Icons.thumb_up),
-                  label: const Text('Good'),
+                  icon: Icon(Icons.thumb_up),
+                  label: Text('Good'),
                 ),
                 OutlinedButton.icon(
                   onPressed: () {},
-                  icon: const Icon(Icons.favorite, color: Colors.pink),
-                  label: const Text('Like'),
+                  icon: Icon(Icons.favorite, color: Colors.pink),
+                  label: Text('Like'),
                 ),
                 ElevatedButton.icon(
                   onPressed: () {},
-                  icon: const Icon(Icons.flight),
-                  label: const Text('Flight'),
+                  icon: Icon(Icons.flight),
+                  label: Text('Flight'),
                 ),
                 FloatingActionButton(
                   backgroundColor: Colors.green,
                   onPressed: () {},
-                  child: const Icon(Icons.add),
+                  child: Icon(Icons.add),
                 ),
               ],
             ),

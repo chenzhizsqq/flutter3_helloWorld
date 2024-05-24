@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,9 +24,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
         textInit = value;
       });
     });
-    if (kDebugMode) {
-      print("initState end!!");
-    }
+    print("initState end!!");
   }
 
   // ドキュメント通りに、prefs.setStringで、String型のデータを保存

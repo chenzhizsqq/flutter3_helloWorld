@@ -99,7 +99,7 @@ class _ListViewPageState extends State<ListViewPage> {
 
   //上拉刷新
   Future _onRefresh() {
-    return Future.delayed(const Duration(seconds: 1), () {
+    return Future.delayed(Duration(seconds: 1), () {
       print('刷新完成');
       setState(() {
         itemCount = 50;
@@ -110,7 +110,7 @@ class _ListViewPageState extends State<ListViewPage> {
   //下拉加载
   Future _loadMore() {
     // 请求接口
-    return Future.delayed(const Duration(seconds: 2), () {
+    return Future.delayed(Duration(seconds: 2), () {
       setState(() {
         print('加载完成');
         isLoading = false;

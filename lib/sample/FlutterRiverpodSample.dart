@@ -3,10 +3,12 @@ import 'FlutterRiverpodDir/FlutterRiverpodHelloworld.dart';
 import 'FlutterRiverpodDir/NoConsumerWidget.dart';
 import 'FlutterRiverpodDir/ConsumerStatefulWidgetSample.dart';
 import 'FlutterRiverpodDir/RiverpodDiSample.dart';
+import 'FlutterRiverpodDir/RiverpodStateNotifierProvider.dart';
+import 'FlutterRiverpodDir/ProviderSample.dart';
+import 'FlutterRiverpodDir/StreamProviderSample.dart';
+import 'FlutterRiverpodDir/AutoDisposeSample.dart';
 
 class FlutterRiverpodSample extends StatelessWidget {
-  const FlutterRiverpodSample({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +58,52 @@ class FlutterRiverpodSample extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => const RiverpodDiSample()));
+              },
+            ),
+
+            //RiverpodStateNotifierProvider
+            ElevatedButton(
+              child: const Text("Riverpod StateNotifierProvider"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const RiverpodStateNotifierProvider()));
+              },
+            ),
+
+            //
+            ElevatedButton(
+              child: const Text("Provider Sample"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProviderSample()));
+              },
+            ),
+
+            //StreamProviderSample
+            ElevatedButton(
+              child: const Text("StreamProvider Sample"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StreamProviderSample()));
+              },
+            ),
+
+            //AutoDisposeSample
+            ElevatedButton(
+              child: const Text(
+                  "AutoDispose Sample\nAutoDispose是一种用于自动释放资源的Provider。"),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AutoDisposeSample()));
               },
             ),
           ],

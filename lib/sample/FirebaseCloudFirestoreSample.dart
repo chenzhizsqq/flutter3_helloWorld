@@ -2,8 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class FirebaseCloudFirestoreSample extends StatefulWidget {
-  const FirebaseCloudFirestoreSample({super.key});
-
   @override
   _FirebaseCloudFirestoreSampleState createState() =>
       _FirebaseCloudFirestoreSampleState();
@@ -24,7 +22,7 @@ class _FirebaseCloudFirestoreSampleState
       (querySnapshot) {
         var temp = "";
         for (var docSnapshot in querySnapshot.docs) {
-          temp = '$temp${docSnapshot.data()}';
+          temp = temp + '${docSnapshot.data()}';
         }
         setState(() {
           orderDocumentInfo = temp;

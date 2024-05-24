@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
 class StateSample extends StatelessWidget {
-  const StateSample({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
+      home: Scaffold(
         body: Center(
           child: MyWidget(),
         ),
@@ -21,8 +19,6 @@ class StateSample extends StatelessWidget {
 // StatefulWidgetを継承するとStateを扱える
 // このWidgetを表示すると、Stateを元にUIが作成される
 class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
-
   // 使用するStateを指定
   @override
   _MyWidgetState createState() => _MyWidgetState();
@@ -48,7 +44,7 @@ class _MyWidgetState extends State<MyWidget> {
               count = count + 1;
             });
           },
-          child: const Text('カウントアップ'),
+          child: Text('カウントアップ'),
         ),
       ],
     );

@@ -1,3 +1,14 @@
+# 简介
+这是一个初级的Flutter的例子
+1.普通的画面显示
+2.Json处理
+3.SharedPreferences
+4.FlutterRiverpod
+5.HooksRiverpod
+6.firebase链接和操作
+7.Dio的API接口
+8.其他初级需要学习的例子
+
 # Hello World
 
 A new Flutter project created with FlutLab - https://flutlab.io

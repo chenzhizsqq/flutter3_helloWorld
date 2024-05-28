@@ -33,6 +33,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'firebase_options.dart';
 
 //void main() => runApp(const MyApp());
+//
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

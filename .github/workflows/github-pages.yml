@@ -1,4 +1,4 @@
-name: github pages
+name: flutter3_helloWorld
 
 on:
   push:

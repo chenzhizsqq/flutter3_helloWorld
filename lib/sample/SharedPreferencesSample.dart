@@ -86,8 +86,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                 const SizedBox(width: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, // background
-                    onPrimary: Colors.white, // foreground
+                    foregroundColor: Colors.white, backgroundColor: Colors.blue, // foreground
                   ),
                   onPressed: _saveData,
                   child: const Text('保存'),
@@ -95,8 +94,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                 const SizedBox(width: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green, // background
-                    onPrimary: Colors.white, // foreground
+                    foregroundColor: Colors.white, backgroundColor: Colors.green, // foreground
                   ),
                   onPressed: _getData,
                   child: const Text('表示'),
@@ -104,8 +102,7 @@ class _SharedPreferencesSampleState extends State<SharedPreferencesSample> {
                 const SizedBox(width: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.red, // background
-                    onPrimary: Colors.white, // foreground
+                    foregroundColor: Colors.white, backgroundColor: Colors.red, // foreground
                   ),
                   onPressed: _removeData,
                   child: const Text('削除'),

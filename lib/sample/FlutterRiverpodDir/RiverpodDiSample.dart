@@ -26,7 +26,7 @@ class RiverpodDiSample extends ConsumerWidget {
                 ),
                 Text(
                   '${ref.watch(countProvider)}',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ],
             ),
@@ -75,7 +75,7 @@ class MySecondPage extends ConsumerWidget {
                 ),
                 Text(
                   '${ref.watch(countProvider)}',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ],
             ),

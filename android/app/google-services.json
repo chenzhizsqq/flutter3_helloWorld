@@ -3,14 +3,14 @@
     "project_number": "868931261169",
     "firebase_url": "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "fluttertest-15e1a",
-    "storage_bucket": "fluttertest-15e1a.appspot.com"
+    "storage_bucket": "fluttertest-15e1a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:868931261169:android:7760a9cfa758056302cf50",
         "android_client_info": {
-          "package_name": "com.example.helloworld"
+          "package_name": "com.example.helloWorldChenFlutterTest"
         }
       },
       "oauth_client": [],

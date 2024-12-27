@@ -39,7 +39,7 @@ void main() async {
         databaseURL:
             "https://fluttertest-15e1a-default-rtdb.asia-southeast1.firebasedatabase.app",
         projectId: "fluttertest-15e1a",
-        storageBucket: "fluttertest-15e1a.appspot.com",
+        storageBucket: "fluttertest-15e1a.firebasestorage.app",
         messagingSenderId: "868931261169",
         appId: "1:868931261169:web:130ff405f609000002cf50"),
   );
